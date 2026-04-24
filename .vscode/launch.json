@@ -3,32 +3,34 @@
     "configurations": [
         {
             "type": "java",
-            "name": "BookingServer",
+            "name": "Run GUI",
             "request": "launch",
-            "mainClass": "network.BookingServer",
-            "projectName": "Booking_1dbca9e2"
-        },
-        {
-            "type": "java",
-            "name": "SocketClient",
-            "request": "launch",
-            "mainClass": "network.SocketClient",
-            "projectName": "Booking_1dbca9e2"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "Booking_1dbca9e2"
+            "mainClass": "gui.LoginApp",
+            "vmArgs": "--module-path lib/javafx --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
             "name": "Run Server",
             "request": "launch",
-            "mainClass": "Main",
-            "projectName": "Booking",
-            "vmArgs": "-cp lib/mysql-connector-j-9.7.0.jar;src"
+            "mainClass": "Main"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main"
+        },
+        {
+            "type": "java",
+            "name": "BookingServer",
+            "request": "launch",
+            "mainClass": "network.BookingServer"
+        },
+        {
+            "type": "java",
+            "name": "SocketClient",
+            "request": "launch",
+            "mainClass": "network.SocketClient"
         }
     ]
 }

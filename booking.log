@@ -1,0 +1,24 @@
+2026-04-24 16:54:49 - LOGIN alice pass → SUCCESS 1
+2026-04-24 16:54:49 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-24 16:54:49 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+
+2026-04-24 16:54:49 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-24 16:54:49 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-24 17:10:01 - LOGIN alice pass → SUCCESS 1
+2026-04-24 17:10:01 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-24 17:10:01 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+
+2026-04-24 17:10:01 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-24 17:10:01 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-24 17:47:10 - LOGIN alice pass → SUCCESS 1

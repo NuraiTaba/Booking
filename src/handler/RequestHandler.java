@@ -2,6 +2,7 @@ package handler;
 
 import service.AuthService;
 import service.BookingService;
+import util.FileLogger;  
 
 public class RequestHandler {
     private AuthService authService;
@@ -19,38 +20,68 @@ public class RequestHandler {
         }
 
         String command = parts[0];
+        String response;
 
-        switch (command) {
+        switch (command){
             case "LOGIN":
                 if (parts.length == 3) {
-                    return authService.login(parts[1], parts[2]);
+                    response = authService.login(parts[1], parts[2]);
+                    FileLogger.log(request, response);              
+                    return response;
                 }
-                return "ERROR Usage: LOGIN username password";
+                response = "ERROR Usage: LOGIN username password";
+                FileLogger.log(request, response);  
+                return response;
+
+            case "REGISTER":
+                if (parts.length == 3) {
+                    response = authService.register(parts[1], parts[2]);
+                    FileLogger.log(request, response);  
+                    return response;
+                }
+                response = "ERROR Usage: REGISTER username password";
+                FileLogger.log(request, response);  
+                return response;
 
             case "BOOK":
                 if (parts.length == 4) {
                     try {
                         int userId = Integer.parseInt(parts[1]);
-                        return bookingService.createBooking(userId, parts[2], parts[3]);
+                        response = bookingService.createBooking(userId, parts[2], parts[3]);
+                        FileLogger.log(request, response);  
+                        return response;
                     } catch (NumberFormatException e) {
-                        return "ERROR Invalid userId";
+                        response = "ERROR Invalid userId";
+                        FileLogger.log(request, response);  
+                        return response;
                     }
                 }
-                return "ERROR Usage: BOOK userId hotel date";
+                response = "ERROR Usage: BOOK userId hotel date";
+                FileLogger.log(request, response); 
+                return response;
 
             case "GET_BOOKINGS":
                 if (parts.length == 2) {
                     try {
                         int userId = Integer.parseInt(parts[1]);
-                        return bookingService.getUserBookings(userId);
+                        response = bookingService.getUserBookings(userId);
+                        FileLogger.log(request, response);  
+                        return response;
                     } catch (NumberFormatException e) {
-                        return "ERROR Invalid userId";
+                        response = "ERROR Invalid userId";
+                        FileLogger.log(request, response);  
+                        return response;
                     }
                 }
-                return "ERROR Usage: GET_BOOKINGS userId";
+                response = "ERROR Usage: GET_BOOKINGS userId";
+                FileLogger.log(request, response);  
+                return response;
 
             default:
-                return "ERROR Unknown command: " + command;
+                response = "ERROR Unknown command: " + command;
+                FileLogger.log(request, response);  
+                return response;
+        
         }
     }
 }

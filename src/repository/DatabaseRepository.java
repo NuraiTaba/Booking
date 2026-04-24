@@ -72,4 +72,23 @@ public class DatabaseRepository {
         }
         return bookings;
     }
+
+    public boolean register(String username, String password) {
+    if (username == null || username.trim().isEmpty() ||
+        password == null || password.trim().isEmpty()) {
+        return false;
+        }
+    
+    String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+    try (Connection conn = getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setString(1, username);
+        stmt.setString(2, password);
+        int rows = stmt.executeUpdate();
+        return rows > 0;
+        } catch (SQLException e) {
+        e.printStackTrace();
+        return false;
+        }
+    }
 }

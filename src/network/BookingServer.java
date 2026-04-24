@@ -4,6 +4,7 @@ import handler.RequestHandler;
 import service.AuthService;
 import service.BookingService;
 import repository.DatabaseRepository;
+import util.FileLogger;
 
 import java.io.*;
 import java.net.*;

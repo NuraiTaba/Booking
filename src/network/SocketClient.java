@@ -35,5 +35,8 @@ public class SocketClient {
 
         String response4 = sendCommand("LOGIN wrong wrong");
         System.out.println("LOGIN wrong wrong → " + response4);
+
+        String response5 = sendCommand("REGISTER newuser pass123");
+        System.out.println("REGISTER newuser pass123 → " + response5);
     }
 }
