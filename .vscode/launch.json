@@ -3,16 +3,16 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Run GUI",
-            "request": "launch",
-            "mainClass": "gui.LoginApp",
-            "vmArgs": "--module-path lib/javafx --add-modules javafx.controls,javafx.fxml"
-        },
-        {
-            "type": "java",
             "name": "Run Server",
             "request": "launch",
             "mainClass": "Main"
+        },
+        {
+            "type": "java",
+            "name": "Run GUI",
+            "request": "launch",
+            "mainClass": "gui.LoginApp",
+            "vmArgs": "--module-path \"C:\\Users\\Asus\\Downloads\\openjfx-21.0.5_windows-x64_bin-sdk\\javafx-sdk-21.0.5\\lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",

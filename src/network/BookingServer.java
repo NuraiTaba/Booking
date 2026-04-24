@@ -1,5 +1,6 @@
 package network;
 
+import controller.BookingController;
 import handler.RequestHandler;
 import service.AuthService;
 import service.BookingService;
@@ -16,7 +17,8 @@ public class BookingServer {
         DatabaseRepository repository = new DatabaseRepository();
         AuthService authService = new AuthService(repository);
         BookingService bookingService = new BookingService(repository);
-        RequestHandler handler = new RequestHandler(authService, bookingService);
+        BookingController controller = new BookingController(authService, bookingService);
+        RequestHandler handler = new RequestHandler(controller);
 
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             System.out.println("✅ Server started on port " + PORT);
