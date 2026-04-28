@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Hotel;
 import model.Review;
-import java.sql.Statement;
 
 public class DatabaseRepository {
     private static final String URL = "jdbc:mysql://localhost:3306/booking_system";
@@ -283,4 +282,72 @@ public class DatabaseRepository {
         }
         return reviews;
     }
+
+    public List<Hotel> filterHotels(int minPrice, int maxPrice, int stars) {
+    List<Hotel> hotels = new ArrayList<>();
+    String sql = "SELECT * FROM hotels WHERE price BETWEEN ? AND ? AND stars >= ? AND status = 'ACTIVE'";
+    try (Connection conn = getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setInt(1, minPrice);
+        stmt.setInt(2, maxPrice);
+        stmt.setInt(3, stars);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            hotels.add(new Hotel(
+                rs.getInt("id"),
+                rs.getString("name"),
+                rs.getString("city"),
+                rs.getString("address"),
+                rs.getInt("stars"),
+                rs.getInt("price"),
+                rs.getDouble("rating"),
+                rs.getString("description"),
+                rs.getString("image_url"),
+                rs.getInt("owner_id"),
+                rs.getString("status")
+            ));
+        }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            }
+            return hotels;
+    }
+    public boolean updateHotel(int hotelId, String name, String city, String address, int stars, int price, String description) {
+    String sql = "UPDATE hotels SET name=?, city=?, address=?, stars=?, price=?, description=? WHERE id=?";
+    try (Connection conn = getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setString(1, name);
+        stmt.setString(2, city);
+        stmt.setString(3, address);
+        stmt.setInt(4, stars);
+        stmt.setInt(5, price);
+        stmt.setString(6, description);
+        stmt.setInt(7, hotelId);
+        int rows = stmt.executeUpdate();
+        return rows > 0;
+        } catch (SQLException e) {
+        e.printStackTrace();
+        }
+    return false;
+    }
+    public String getOwnerBookings(int ownerId) {
+    StringBuilder sb = new StringBuilder();
+    String sql = "SELECT b.*, u.username FROM bookings b " +
+                 "JOIN hotels h ON b.hotel = h.name " +
+                 "JOIN users u ON b.user_id = u.id " +
+                 "WHERE h.owner_id = ? ORDER BY b.booking_date DESC";
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setInt(1, ownerId);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            sb.append(rs.getString("username")).append("|")
+              .append(rs.getString("hotel")).append("|")
+              .append(rs.getString("booking_date")).append("\n");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return sb.length() > 0 ? sb.toString() : "EMPTY No bookings";
+}
 }

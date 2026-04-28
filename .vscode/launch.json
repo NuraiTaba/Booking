@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestFilter",
+            "request": "launch",
+            "mainClass": "TestFilter",
+            "projectName": "Booking_1dbca9e2"
+        },
+        {
+            "type": "java",
             "name": "Run Server",
             "request": "launch",
             "mainClass": "Main"

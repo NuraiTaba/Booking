@@ -26,7 +26,35 @@ public class BookingController {
         
         String command = parts[0];
         System.out.println("📥 Received command: " + command);
+        
         switch (command) {
+            case "OWNER_BOOKINGS":
+    if (parts.length == 2) {
+        try {
+            int ownerId = Integer.parseInt(parts[1]);
+            return repository.getOwnerBookings(ownerId);
+        } catch (NumberFormatException e) {
+            return "ERROR Invalid ownerId";
+        }
+    }
+    return "ERROR Usage: OWNER_BOOKINGS ownerId";
+            case "UPDATE_HOTEL":
+                if (parts.length == 9) {
+                try {
+             int hotelId = Integer.parseInt(parts[1]);
+             String name = parts[2];
+             String city = parts[3];
+             String address = parts[4];
+             int stars = Integer.parseInt(parts[5]);
+             int price = Integer.parseInt(parts[6]);
+             String description = parts[7];
+                int ownerId = Integer.parseInt(parts[8]);
+            return handleUpdateHotel(hotelId, name, city, address, stars, price, description, ownerId);
+                } catch (NumberFormatException e) {
+            return "ERROR Invalid number format";
+                }
+            }
+            return "ERROR Usage: UPDATE_HOTEL id name city address stars price description ownerId";
             case "LOGIN":
                 if (parts.length == 3) {
                     return authService.login(parts[1], parts[2]);
@@ -61,7 +89,6 @@ public class BookingController {
                 }
                 return "ERROR Usage: GET_BOOKINGS userId";
                 
-            // ========== НОВЫЕ КОМАНДЫ ДЛЯ ОТЕЛЕЙ ==========
             case "GET_HOTELS":
                 return handleGetHotels();
                 
@@ -84,7 +111,7 @@ public class BookingController {
                 return "ERROR Usage: HOTEL_DETAIL hotelId";
                 
             case "ADD_HOTEL":
-                if (parts.length >= 7) {
+                if (parts.length >= 8) {
                     try {
                         String name = parts[1];
                         String city = parts[2];
@@ -111,7 +138,6 @@ public class BookingController {
                 }
                 return "ERROR Usage: MY_HOTELS ownerId";
                 
-            // ========== КОМАНДЫ ДЛЯ ОТЗЫВОВ ==========
             case "ADD_REVIEW":
                 if (parts.length == 6) {
                     try {
@@ -138,15 +164,60 @@ public class BookingController {
                 }
                 return "ERROR Usage: GET_REVIEWS hotelId";
                 
+            case "FILTER":
+                if (parts.length == 4) {
+                    try {
+                        int minPrice = Integer.parseInt(parts[1]);
+                        int maxPrice = Integer.parseInt(parts[2]);
+                        int stars = Integer.parseInt(parts[3]);
+                        return handleFilter(minPrice, maxPrice, stars);
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid price or stars";
+                    }
+                }
+                return "ERROR Usage: FILTER minPrice maxPrice stars";
+                
             default:
                 return "ERROR Unknown command: " + command;
         }
     }
     
+
+    private String handleUpdateHotel(int hotelId, String name, String city, String address, int stars, int price, String description, int ownerId) {
+    // Проверяем, что отель принадлежит этому владельцу
+    List<Hotel> ownerHotels = repository.getHotelsByOwner(ownerId);
+    boolean ownsHotel = ownerHotels.stream().anyMatch(h -> h.getId() == hotelId);
+    if (!ownsHotel) {
+        return "ERROR You don't own this hotel";
+    }
+    
+    boolean success = repository.updateHotel(hotelId, name, city, address, stars, price, description);
+    if (success) {
+        return "SUCCESS Hotel updated";
+    }
+    return "ERROR Failed to update hotel";
+}
     // ========== ОБРАБОТЧИКИ ==========
     
+    private String handleFilter(int minPrice, int maxPrice, int stars) {
+        List<Hotel> hotels = repository.filterHotels(minPrice, maxPrice, stars);
+        if (hotels.isEmpty()) {
+            return "EMPTY No hotels found";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (Hotel h : hotels) {
+            sb.append(h.getId()).append("|")
+              .append(h.getName()).append("|")
+              .append(h.getCity()).append("|")
+              .append(h.getStars()).append("|")
+              .append(h.getPrice()).append("|")
+              .append(h.getRating()).append("|")
+              .append(h.getImageUrl()).append("\n");
+        }
+        return sb.toString();
+    }
+    
     private String handleGetHotels() {
-
         System.out.println("🔍 handleGetHotels() called");
         List<Hotel> hotels = repository.getAllHotels();
         System.out.println("Hotels found: " + hotels.size());
@@ -164,7 +235,6 @@ public class BookingController {
               .append(h.getImageUrl()).append("\n");
         }
         return sb.toString();
-        
     }
     
     private String handleSearchHotels(String city) {
