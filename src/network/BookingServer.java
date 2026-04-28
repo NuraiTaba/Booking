@@ -17,7 +17,7 @@ public class BookingServer {
         DatabaseRepository repository = new DatabaseRepository();
         AuthService authService = new AuthService(repository);
         BookingService bookingService = new BookingService(repository);
-        BookingController controller = new BookingController(authService, bookingService);
+        BookingController controller = new BookingController(authService, bookingService, repository);
         RequestHandler handler = new RequestHandler(controller);
 
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {

@@ -14,9 +14,8 @@ public class FileLogger {
             
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             out.println(timestamp + " - " + message);
-            out.flush();  // принудительно сохраняем
+            out.flush(); 
             
-            // Для отладки — выведем в консоль, что лог записан
             System.out.println("📝 Log written: " + message);
             
         } catch (IOException e) {

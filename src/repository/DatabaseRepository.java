@@ -4,11 +4,14 @@ import model.Booking;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import model.Hotel;
+import model.Review;
+import java.sql.Statement;
 
 public class DatabaseRepository {
     private static final String URL = "jdbc:mysql://localhost:3306/booking_system";
     private static final String USER = "root";
-    private static final String PASSWORD = "@LinDu098";  // ← ТВОЙ ПАРОЛЬ
+    private static final String PASSWORD = "@LinDu098"; 
 
     static {
         try {
@@ -90,5 +93,194 @@ public class DatabaseRepository {
         e.printStackTrace();
         return false;
         }
+    }
+        // ========== ОТЕЛИ ==========
+    
+    public List<Hotel> getAllHotels() {
+        List<Hotel> hotels = new ArrayList<>();
+        String sql = "SELECT * FROM hotels WHERE status = 'ACTIVE'";
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                hotels.add(new Hotel(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("city"),
+                    rs.getString("address"),
+                    rs.getInt("stars"),
+                    rs.getInt("price"),
+                    rs.getDouble("rating"),
+                    rs.getString("description"),
+                    rs.getString("image_url"),
+                    rs.getInt("owner_id"),
+                    rs.getString("status")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return hotels;
+    }
+    
+    public List<Hotel> searchHotels(String city) {
+        List<Hotel> hotels = new ArrayList<>();
+        String sql = "SELECT * FROM hotels WHERE city LIKE ? AND status = 'ACTIVE'";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, "%" + city + "%");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                hotels.add(new Hotel(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("city"),
+                    rs.getString("address"),
+                    rs.getInt("stars"),
+                    rs.getInt("price"),
+                    rs.getDouble("rating"),
+                    rs.getString("description"),
+                    rs.getString("image_url"),
+                    rs.getInt("owner_id"),
+                    rs.getString("status")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return hotels;
+    }
+    
+    public Hotel getHotelById(int hotelId) {
+        String sql = "SELECT * FROM hotels WHERE id = ?";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, hotelId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new Hotel(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("city"),
+                    rs.getString("address"),
+                    rs.getInt("stars"),
+                    rs.getInt("price"),
+                    rs.getDouble("rating"),
+                    rs.getString("description"),
+                    rs.getString("image_url"),
+                    rs.getInt("owner_id"),
+                    rs.getString("status")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    public List<Hotel> getHotelsByOwner(int ownerId) {
+        List<Hotel> hotels = new ArrayList<>();
+        String sql = "SELECT * FROM hotels WHERE owner_id = ?";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, ownerId);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                hotels.add(new Hotel(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("city"),
+                    rs.getString("address"),
+                    rs.getInt("stars"),
+                    rs.getInt("price"),
+                    rs.getDouble("rating"),
+                    rs.getString("description"),
+                    rs.getString("image_url"),
+                    rs.getInt("owner_id"),
+                    rs.getString("status")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return hotels;
+    }
+    public int addHotel(String name, String city, String address, int stars, int price, String description, int ownerId) {
+    String sql = "INSERT INTO hotels (name, city, address, stars, price, description, owner_id, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'ACTIVE')";
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+        stmt.setString(1, name);
+        stmt.setString(2, city);
+        stmt.setString(3, address);
+        stmt.setInt(4, stars);
+        stmt.setInt(5, price);
+        stmt.setString(6, description);
+        stmt.setInt(7, ownerId);
+        stmt.executeUpdate();
+        
+        ResultSet rs = stmt.getGeneratedKeys();
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return -1;
+}
+    
+    // ========== ОТЗЫВЫ ==========
+    
+    public boolean addReview(int hotelId, int userId, int bookingId, int rating, String comment) {
+        String sql = "INSERT INTO reviews (hotel_id, user_id, booking_id, rating, comment) VALUES (?, ?, ?, ?, ?)";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, hotelId);
+            stmt.setInt(2, userId);
+            stmt.setInt(3, bookingId);
+            stmt.setInt(4, rating);
+            stmt.setString(5, comment);
+            stmt.executeUpdate();
+            updateHotelRating(hotelId);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+    private void updateHotelRating(int hotelId) {
+        String sql = "UPDATE hotels SET rating = (SELECT AVG(rating) FROM reviews WHERE hotel_id = ?) WHERE id = ?";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, hotelId);
+            stmt.setInt(2, hotelId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public List<Review> getReviewsByHotel(int hotelId) {
+        List<Review> reviews = new ArrayList<>();
+        String sql = "SELECT r.*, u.username FROM reviews r JOIN users u ON r.user_id = u.id WHERE r.hotel_id = ? ORDER BY r.created_at DESC";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, hotelId);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                reviews.add(new Review(
+                    rs.getInt("id"),
+                    rs.getInt("hotel_id"),
+                    rs.getInt("user_id"),
+                    rs.getInt("booking_id"),
+                    rs.getInt("rating"),
+                    rs.getString("comment") + " — " + rs.getString("username"),
+                    rs.getString("created_at")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return reviews;
     }
 }

@@ -39,7 +39,7 @@ public class LoginApp extends Application {
         
         Label messageLabel = new Label();
         messageLabel.setStyle("-fx-text-fill: red;");
-        
+       
         loginBtn.setOnAction(e -> {
             String response = SocketClient.sendCommand("LOGIN " + usernameField.getText() + " " + passwordField.getText());
             if (response.startsWith("SUCCESS")) {
