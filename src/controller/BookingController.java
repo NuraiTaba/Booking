@@ -19,7 +19,7 @@ public class BookingController {
     }
     
     public String processCommand(String request) {
-        String[] parts = request.split(" ");
+        String[] parts = request.contains("|") ? request.split("\\|", -1) : request.split(" ");
         if (parts.length == 0) {
             return "ERROR Empty command";
         }
@@ -77,6 +77,21 @@ public class BookingController {
                     }
                 }
                 return "ERROR Usage: BOOK userId hotel date";
+
+            case "BOOK_FULL":
+                if (parts.length >= 10) {
+                    try {
+                        int userId = Integer.parseInt(parts[1]);
+                        int guests = Integer.parseInt(parts[5]);
+                        int rooms = Integer.parseInt(parts[6]);
+                        boolean success = repository.saveFullBooking(userId, parts[2], parts[3], parts[4],
+                                guests, rooms, parts[7], parts[8], parts[9]);
+                        return success ? "SUCCESS Booking confirmed" : "ERROR Failed to create booking";
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid booking numbers";
+                    }
+                }
+                return "ERROR Usage: BOOK_FULL userId hotel checkIn checkOut guests rooms guestName email phone";
                 
             case "GET_BOOKINGS":
                 if (parts.length == 2) {
@@ -88,9 +103,85 @@ public class BookingController {
                     }
                 }
                 return "ERROR Usage: GET_BOOKINGS userId";
+
+            case "CANCEL_BOOKING":
+                if (parts.length == 3) {
+                    try {
+                        boolean success = repository.cancelBooking(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
+                        return success ? "SUCCESS Booking cancelled" : "ERROR Booking not found";
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid booking id";
+                    }
+                }
+                return "ERROR Usage: CANCEL_BOOKING userId bookingId";
+
+            case "CHANGE_BOOKING_DATES":
+                if (parts.length == 5) {
+                    try {
+                        boolean success = repository.changeBookingDates(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), parts[3], parts[4]);
+                        return success ? "SUCCESS Booking dates changed" : "ERROR Booking not found";
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid booking id";
+                    }
+                }
+                return "ERROR Usage: CHANGE_BOOKING_DATES userId bookingId checkIn checkOut";
+
+            case "ADD_WISHLIST":
+                if (parts.length >= 3) {
+                    try {
+                        String collection = parts.length >= 4 ? parts[3] : "Favorites";
+                        boolean success = repository.addToWishlist(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), collection);
+                        return success ? "SUCCESS Added to wishlist" : "ERROR Failed to add wishlist item";
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid wishlist data";
+                    }
+                }
+                return "ERROR Usage: ADD_WISHLIST userId hotelId collection";
+
+            case "REMOVE_WISHLIST":
+                if (parts.length == 3) {
+                    try {
+                        boolean success = repository.removeFromWishlist(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
+                        return success ? "SUCCESS Removed from wishlist" : "ERROR Wishlist item not found";
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid wishlist data";
+                    }
+                }
+                return "ERROR Usage: REMOVE_WISHLIST userId hotelId";
+
+            case "GET_WISHLIST":
+                if (parts.length == 2) {
+                    try {
+                        return repository.getWishlist(Integer.parseInt(parts[1]));
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid userId";
+                    }
+                }
+                return "ERROR Usage: GET_WISHLIST userId";
+
+            case "GET_PROFILE":
+                if (parts.length == 2) {
+                    try {
+                        return repository.getUserProfile(Integer.parseInt(parts[1]));
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid userId";
+                    }
+                }
+                return "ERROR Usage: GET_PROFILE userId";
+
+            case "UPDATE_PROFILE":
+                if (parts.length == 5) {
+                    try {
+                        boolean success = repository.updateUserProfile(Integer.parseInt(parts[1]), parts[2], parts[3], parts[4]);
+                        return success ? "SUCCESS Profile updated" : "ERROR Profile not found";
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid userId";
+                    }
+                }
+                return "ERROR Usage: UPDATE_PROFILE userId fullName email phone";
                 
             case "GET_HOTELS":
-                return handleGetHotels();
+                return parts.length >= 2 ? handleGetHotels(parts[1]) : handleGetHotels("rating");
                 
             case "SEARCH":
                 if (parts.length >= 2) {
@@ -98,6 +189,36 @@ public class BookingController {
                     return handleSearchHotels(city);
                 }
                 return "ERROR Usage: SEARCH city";
+
+            case "SAVE_SEARCH":
+                if (parts.length >= 3) {
+                    try {
+                        repository.saveRecentSearch(Integer.parseInt(parts[1]), parts[2]);
+                        return "SUCCESS Search saved";
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid userId";
+                    }
+                }
+                return "ERROR Usage: SAVE_SEARCH userId query";
+
+            case "RECENT_SEARCHES":
+                if (parts.length == 2) {
+                    try {
+                        return repository.getRecentSearches(Integer.parseInt(parts[1]));
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid userId";
+                    }
+                }
+                return "ERROR Usage: RECENT_SEARCHES userId";
+
+            case "POPULAR_DESTINATIONS":
+                return repository.getPopularDestinations();
+
+            case "AUTOCOMPLETE":
+                if (parts.length >= 2) {
+                    return repository.getAutocompleteSuggestions(parts[1]);
+                }
+                return repository.getAutocompleteSuggestions("");
                 
             case "HOTEL_DETAIL":
                 if (parts.length == 2) {
@@ -119,13 +240,33 @@ public class BookingController {
                         int stars = Integer.parseInt(parts[4]);
                         int price = Integer.parseInt(parts[5]);
                         String description = parts[6];
-                        int ownerId = Integer.parseInt(parts[7]);
-                        return handleAddHotel(name, city, address, stars, price, description, ownerId);
+                        String imageUrl = "";
+                        int ownerId;
+                        if (parts.length >= 9) {
+                            imageUrl = parts[7];
+                            ownerId = Integer.parseInt(parts[8]);
+                        } else {
+                            ownerId = Integer.parseInt(parts[7]);
+                        }
+                        String result = handleAddHotel(name, city, address, stars, price, description, imageUrl, ownerId);
+                        if (result.startsWith("SUCCESS") && parts.length >= 18) {
+                            int hotelId = Integer.parseInt(result.replaceAll("\\D+", ""));
+                            repository.updateHotelExtrasById(hotelId, parts[9], parts[10],
+                                    Double.parseDouble(parts[11]),
+                                    0,
+                                    Integer.parseInt(parts[12]),
+                                    Boolean.parseBoolean(parts[13]),
+                                    Boolean.parseBoolean(parts[14]),
+                                    Boolean.parseBoolean(parts[15]),
+                                    Boolean.parseBoolean(parts[16]),
+                                    Boolean.parseBoolean(parts[17]));
+                        }
+                        return result;
                     } catch (NumberFormatException e) {
                         return "ERROR Invalid number format";
                     }
                 }
-                return "ERROR Usage: ADD_HOTEL name city address stars price description ownerId";
+                return "ERROR Usage: ADD_HOTEL name city address stars price description imageUrl ownerId";
                 
             case "MY_HOTELS":
                 if (parts.length == 2) {
@@ -139,6 +280,23 @@ public class BookingController {
                 return "ERROR Usage: MY_HOTELS ownerId";
                 
             case "ADD_REVIEW":
+                if (parts.length >= 10) {
+                    try {
+                        boolean success = repository.addDetailedReview(
+                                Integer.parseInt(parts[1]),
+                                Integer.parseInt(parts[2]),
+                                Integer.parseInt(parts[3]),
+                                Integer.parseInt(parts[4]),
+                                Integer.parseInt(parts[5]),
+                                Integer.parseInt(parts[6]),
+                                Integer.parseInt(parts[7]),
+                                parts[8],
+                                parts[9]);
+                        return success ? "SUCCESS Review added" : "ERROR Failed to add review";
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid review numbers";
+                    }
+                }
                 if (parts.length == 6) {
                     try {
                         int hotelId = Integer.parseInt(parts[1]);
@@ -154,6 +312,13 @@ public class BookingController {
                 return "ERROR Usage: ADD_REVIEW hotelId userId bookingId rating comment";
                 
             case "GET_REVIEWS":
+                if (parts.length >= 4) {
+                    try {
+                        return repository.getReviewsByHotelSorted(Integer.parseInt(parts[1]), parts[2], Integer.parseInt(parts[3]));
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid review filter";
+                    }
+                }
                 if (parts.length == 2) {
                     try {
                         int hotelId = Integer.parseInt(parts[1]);
@@ -163,6 +328,26 @@ public class BookingController {
                     }
                 }
                 return "ERROR Usage: GET_REVIEWS hotelId";
+
+            case "RECOMMENDATIONS":
+                if (parts.length == 2) {
+                    try {
+                        return repository.getRecommendations(Integer.parseInt(parts[1]));
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid userId";
+                    }
+                }
+                return "ERROR Usage: RECOMMENDATIONS userId";
+
+            case "CONTACT_HOTEL":
+                if (parts.length >= 4) {
+                    try {
+                        return repository.contactHotel(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), parts[3]);
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid contact data";
+                    }
+                }
+                return "ERROR Usage: CONTACT_HOTEL userId hotelId message";
                 
             case "FILTER":
                 if (parts.length == 4) {
@@ -175,7 +360,26 @@ public class BookingController {
                         return "ERROR Invalid price or stars";
                     }
                 }
-                return "ERROR Usage: FILTER minPrice maxPrice stars";
+                if (parts.length >= 13) {
+                    try {
+                        return handleAdvancedFilter(
+                                Integer.parseInt(parts[1]),
+                                Integer.parseInt(parts[2]),
+                                Integer.parseInt(parts[3]),
+                                parts[4],
+                                Boolean.parseBoolean(parts[5]),
+                                Boolean.parseBoolean(parts[6]),
+                                Boolean.parseBoolean(parts[7]),
+                                Boolean.parseBoolean(parts[8]),
+                                Boolean.parseBoolean(parts[9]),
+                                parts[10],
+                                Boolean.parseBoolean(parts[11]),
+                                parts[12]);
+                    } catch (NumberFormatException e) {
+                        return "ERROR Invalid filter values";
+                    }
+                }
+                return "ERROR Usage: FILTER minPrice maxPrice stars propertyType wifi parking pool breakfast freeCancellation district availableOnly sortBy";
                 
             default:
                 return "ERROR Unknown command: " + command;
@@ -201,6 +405,19 @@ public class BookingController {
     
     private String handleFilter(int minPrice, int maxPrice, int stars) {
         List<Hotel> hotels = repository.filterHotels(minPrice, maxPrice, stars);
+        return serializeHotels(hotels);
+    }
+
+    private String handleAdvancedFilter(int minPrice, int maxPrice, int stars, String propertyType,
+                                        boolean wifi, boolean parking, boolean pool, boolean breakfast,
+                                        boolean freeCancellation, String district, boolean availableOnly,
+                                        String sortBy) {
+        List<Hotel> hotels = repository.filterHotels(minPrice, maxPrice, stars, propertyType, wifi, parking,
+                pool, breakfast, freeCancellation, district, availableOnly, sortBy);
+        return serializeHotels(hotels);
+    }
+
+    private String serializeHotels(List<Hotel> hotels) {
         if (hotels.isEmpty()) {
             return "EMPTY No hotels found";
         }
@@ -217,24 +434,11 @@ public class BookingController {
         return sb.toString();
     }
     
-    private String handleGetHotels() {
+    private String handleGetHotels(String sortBy) {
         System.out.println("🔍 handleGetHotels() called");
-        List<Hotel> hotels = repository.getAllHotels();
+        List<Hotel> hotels = repository.getHotelsSorted(sortBy);
         System.out.println("Hotels found: " + hotels.size());
-        if (hotels.isEmpty()) {
-            return "EMPTY No hotels found";
-        }
-        StringBuilder sb = new StringBuilder();
-        for (Hotel h : hotels) {
-            sb.append(h.getId()).append("|")
-              .append(h.getName()).append("|")
-              .append(h.getCity()).append("|")
-              .append(h.getStars()).append("|")
-              .append(h.getPrice()).append("|")
-              .append(h.getRating()).append("|")
-              .append(h.getImageUrl()).append("\n");
-        }
-        return sb.toString();
+        return serializeHotels(hotels);
     }
     
     private String handleSearchHotels(String city) {
@@ -242,17 +446,7 @@ public class BookingController {
         if (hotels.isEmpty()) {
             return "EMPTY No hotels found in " + city;
         }
-        StringBuilder sb = new StringBuilder();
-        for (Hotel h : hotels) {
-            sb.append(h.getId()).append("|")
-              .append(h.getName()).append("|")
-              .append(h.getCity()).append("|")
-              .append(h.getStars()).append("|")
-              .append(h.getPrice()).append("|")
-              .append(h.getRating()).append("|")
-              .append(h.getImageUrl()).append("\n");
-        }
-        return sb.toString();
+        return serializeHotels(hotels);
     }
     
     private String handleHotelDetail(int hotelId) {
@@ -268,11 +462,13 @@ public class BookingController {
                hotel.getPrice() + "|" +
                hotel.getRating() + "|" +
                hotel.getDescription() + "|" +
-               hotel.getImageUrl();
+               hotel.getImageUrl() + "|" +
+               repository.getHotelExtras(hotelId) + "|" +
+               repository.getHotelContent(hotelId);
     }
     
-    private String handleAddHotel(String name, String city, String address, int stars, int price, String description, int ownerId) {
-        int id = repository.addHotel(name, city, address, stars, price, description, ownerId);
+    private String handleAddHotel(String name, String city, String address, int stars, int price, String description, String imageUrl, int ownerId) {
+        int id = repository.addHotel(name, city, address, stars, price, description, imageUrl, ownerId);
         if (id > 0) {
             return "SUCCESS Hotel added with ID: " + id;
         }

@@ -15,6 +15,7 @@ public class BookingServer {
 
     public static void main(String[] args) {
         DatabaseRepository repository = new DatabaseRepository();
+        repository.initializeProjectData();
         AuthService authService = new AuthService(repository);
         BookingService bookingService = new BookingService(repository);
         BookingController controller = new BookingController(authService, bookingService, repository);

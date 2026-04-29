@@ -31,14 +31,6 @@ public class BookingService implements IBookingService {
 
     @Override
     public String getUserBookings(int userId) {
-        List<Booking> bookings = repo.getBookingsByUser(userId);
-        if (bookings.isEmpty()) {
-            return "EMPTY No bookings found";
-        }
-        StringBuilder sb = new StringBuilder();
-        for (Booking b : bookings) {
-            sb.append(b.toString()).append("\n");
-        }
-        return sb.toString();
+        return repo.getBookingSummaryByUser(userId);
     }
 }

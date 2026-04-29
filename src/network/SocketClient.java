@@ -13,7 +13,15 @@ public class SocketClient {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
             out.println(command);
-            return in.readLine();
+            StringBuilder response = new StringBuilder();
+            String line;
+            while ((line = in.readLine()) != null) {
+                if (response.length() > 0) {
+                    response.append("\n");
+                }
+                response.append(line);
+            }
+            return response.toString();
 
         } catch (IOException e) {
             return "ERROR Connection failed: " + e.getMessage();
