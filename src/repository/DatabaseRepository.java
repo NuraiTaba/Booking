@@ -31,6 +31,7 @@ public class DatabaseRepository {
     }
 
     private void ensureSchema() {
+        createBaseTablesIfMissing();
         addColumnIfMissing("hotels", "property_type", "VARCHAR(30) DEFAULT 'Hotel'");
         addColumnIfMissing("hotels", "district", "VARCHAR(80) DEFAULT ''");
         addColumnIfMissing("hotels", "distance_to_center", "DOUBLE DEFAULT 1.0");
@@ -62,6 +63,85 @@ public class DatabaseRepository {
         createWishlistTableIfMissing();
         createRecentSearchesTableIfMissing();
     }
+
+    private void createBaseTablesIfMissing() {
+        createUsersTableIfMissing();
+        createHotelsTableIfMissing();
+        createBookingsTableIfMissing();
+        createReviewsTableIfMissing();
+    }
+
+    private void createUsersTableIfMissing() {
+        String sql = "CREATE TABLE IF NOT EXISTS users (" +
+                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
+                     "username VARCHAR(50) NOT NULL UNIQUE, " +
+                     "password VARCHAR(100) NOT NULL, " +
+                     "role ENUM('GUEST','OWNER','ADMIN') DEFAULT 'GUEST', " +
+                     "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.err.println("Could not create users table: " + e.getMessage());
+        }
+    }
+
+    private void createHotelsTableIfMissing() {
+        String sql = "CREATE TABLE IF NOT EXISTS hotels (" +
+                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
+                     "name VARCHAR(150) NOT NULL, " +
+                     "city VARCHAR(100) NOT NULL, " +
+                     "address VARCHAR(200) DEFAULT '', " +
+                     "stars INT DEFAULT 3, " +
+                     "price INT DEFAULT 0, " +
+                     "rating DOUBLE DEFAULT 0.0, " +
+                     "description TEXT, " +
+                     "image_url VARCHAR(500), " +
+                     "owner_id INT, " +
+                     "status VARCHAR(30) DEFAULT 'ACTIVE', " +
+                     "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.err.println("Could not create hotels table: " + e.getMessage());
+        }
+    }
+
+    private void createBookingsTableIfMissing() {
+        String sql = "CREATE TABLE IF NOT EXISTS bookings (" +
+                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
+                     "user_id INT NOT NULL, " +
+                     "hotel VARCHAR(150) NOT NULL, " +
+                     "booking_date VARCHAR(20) NOT NULL, " +
+                     "status VARCHAR(30) DEFAULT 'CONFIRMED', " +
+                     "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.err.println("Could not create bookings table: " + e.getMessage());
+        }
+    }
+
+    private void createReviewsTableIfMissing() {
+        String sql = "CREATE TABLE IF NOT EXISTS reviews (" +
+                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
+                     "hotel_id INT NOT NULL, " +
+                     "hotel_name VARCHAR(150) NOT NULL, " +
+                     "city VARCHAR(100) NOT NULL, " +
+                     "user_id INT NOT NULL, " +
+                     "rating INT DEFAULT 5, " +
+                     "comment TEXT, " +
+                     "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.err.println("Could not create reviews table: " + e.getMessage());
+        }
+    }
+
 
     private void addColumnIfMissing(String table, String column, String definition) {
         String sql = "ALTER TABLE " + table + " ADD COLUMN " + column + " " + definition;
@@ -108,20 +188,45 @@ public class DatabaseRepository {
 
 
     public Integer login(String username, String password) {
-    String sql = "SELECT id FROM users WHERE username = ? AND password = ?";
-    try (Connection conn = getConnection();
-         PreparedStatement stmt = conn.prepareStatement(sql)) {
-        stmt.setString(1, username);
-        stmt.setString(2, password);
-        ResultSet rs = stmt.executeQuery();
-        if (rs.next()) {
-            return rs.getInt("id");
+        String sql = "SELECT id, role FROM users WHERE username = ? AND password = ?";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
+        return null;
     }
-    return null;
-}
+
+    private static int roleStringToInt(String role) {
+        if (role == null) {
+            return 0;
+        }
+        switch (role.toUpperCase()) {
+            case "OWNER":
+                return 1;
+            case "ADMIN":
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
+    private static String roleIntToString(int role) {
+        switch (role) {
+            case 1:
+                return "OWNER";
+            case 2:
+                return "ADMIN";
+            default:
+                return "GUEST";
+        }
+    }
 
     public void saveBooking(Booking booking) {
     // Сначала проверим, нет ли уже такой брони
@@ -350,23 +455,87 @@ public class DatabaseRepository {
         return false;
     }
 
-    public boolean register(String username, String password) {
-    if (username == null || username.trim().isEmpty() ||
-        password == null || password.trim().isEmpty()) {
-        return false;
-        }
-    
-    String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-    try (Connection conn = getConnection();
-        PreparedStatement stmt = conn.prepareStatement(sql)) {
-        stmt.setString(1, username);
-        stmt.setString(2, password);
-        int rows = stmt.executeUpdate();
-        return rows > 0;
+    public int getUserRole(int userId) {
+        String sql = "SELECT role FROM users WHERE id = ?";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, userId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return roleStringToInt(rs.getString("role"));
+            }
         } catch (SQLException e) {
-        e.printStackTrace();
-        return false;
+            e.printStackTrace();
         }
+        return 0;
+    }
+
+    public String getAllUsers() {
+        StringBuilder sb = new StringBuilder();
+        String sql = "SELECT id, username, role, full_name, email FROM users ORDER BY id";
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                sb.append(rs.getInt("id")).append("|")
+                  .append(rs.getString("username")).append("|")
+                  .append(rs.getString("role")).append("|")
+                  .append(rs.getString("full_name")).append("|")
+                  .append(rs.getString("email")).append("\n");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sb.length() > 0 ? sb.toString() : "No users found";
+    }
+
+    public String getAllHotelsAdmin() {
+        StringBuilder sb = new StringBuilder();
+        String sql = "SELECT id, name, city, owner_id, rating, status FROM hotels ORDER BY id";
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                sb.append(rs.getInt("id")).append("|")
+                  .append(rs.getString("name")).append("|")
+                  .append(rs.getString("city")).append("|")
+                  .append(rs.getInt("owner_id")).append("|")
+                  .append(rs.getDouble("rating")).append("|")
+                  .append(rs.getString("status")).append("\n");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sb.length() > 0 ? sb.toString() : "No hotels found";
+    }
+
+    public String getStats() {
+        StringBuilder sb = new StringBuilder();
+        try (Connection conn = getConnection()) {
+            // Total users
+            try (Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM users")) {
+                if (rs.next()) sb.append("Total users: ").append(rs.getInt(1)).append("\n");
+            }
+            // Total hotels
+            try (Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM hotels")) {
+                if (rs.next()) sb.append("Total hotels: ").append(rs.getInt(1)).append("\n");
+            }
+            // Total bookings
+            try (Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM bookings")) {
+                if (rs.next()) sb.append("Total bookings: ").append(rs.getInt(1)).append("\n");
+            }
+            // Total reviews
+            try (Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM reviews")) {
+                if (rs.next()) sb.append("Total reviews: ").append(rs.getInt(1)).append("\n");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sb.toString();
     }
         
     // Запустите один раз, чтобы почистить существующие дубликаты
@@ -534,9 +703,30 @@ public void cleanupDuplicates() {
         return sb.length() > 0 ? sb.toString() : "EMPTY No suggestions";
     }
 
+    public boolean register(String username, String password, int role) {
+        if (username == null || username.trim().isEmpty() ||
+            password == null || password.trim().isEmpty()) {
+            return false;
+        }
+        
+        String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            stmt.setString(3, roleIntToString(role));
+            int rows = stmt.executeUpdate();
+            return rows > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public void seedDemoData() {
         int demoOwnerId = ensureDemoOwner();
         int demoGuestId = ensureDemoGuest();
+        int demoAdminId = ensureDemoAdmin();
         seedHotel("Rixos Almaty", "Almaty", "Seyfullin Avenue 506/99", 5, 85000,
                 "Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.",
                 "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900",
@@ -574,28 +764,43 @@ public void cleanupDuplicates() {
     }
 
     private int ensureDemoOwner() {
-        return ensureUser("demo_owner", "demo");
+        return ensureUser("demo_owner", "demo", 1); // Owner
     }
 
     private int ensureDemoGuest() {
-        return ensureUser("demo_guest", "demo");
+        return ensureUser("demo_guest", "demo", 0); // Guest
     }
 
-    private int ensureUser(String username, String password) {
-        String selectSql = "SELECT id FROM users WHERE username = ?";
-        String insertSql = "INSERT INTO users (username, password) VALUES (?, ?)";
+    private int ensureDemoAdmin() {
+        return ensureUser("admin", "admin", 2); // Admin
+    }
+
+    private int ensureUser(String username, String password, int role) {
+        String selectSql = "SELECT id, role FROM users WHERE username = ?";
+        String insertSql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
+        String updateSql = "UPDATE users SET role = ? WHERE id = ?";
         try (Connection conn = getConnection()) {
             try (PreparedStatement selectStmt = conn.prepareStatement(selectSql)) {
                 selectStmt.setString(1, username);
                 ResultSet rs = selectStmt.executeQuery();
                 if (rs.next()) {
-                    return rs.getInt("id");
+                    int userId = rs.getInt("id");
+                    String existingRole = rs.getString("role");
+                    if (roleStringToInt(existingRole) != role) {
+                        try (PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
+                            updateStmt.setString(1, roleIntToString(role));
+                            updateStmt.setInt(2, userId);
+                            updateStmt.executeUpdate();
+                        }
+                    }
+                    return userId;
                 }
             }
 
             try (PreparedStatement insertStmt = conn.prepareStatement(insertSql, Statement.RETURN_GENERATED_KEYS)) {
                 insertStmt.setString(1, username);
                 insertStmt.setString(2, password);
+                insertStmt.setString(3, roleIntToString(role));
                 insertStmt.executeUpdate();
                 ResultSet keys = insertStmt.getGeneratedKeys();
                 if (keys.next()) {
@@ -603,7 +808,7 @@ public void cleanupDuplicates() {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Could not create demo owner: " + e.getMessage());
+            System.err.println("Could not create demo user: " + e.getMessage());
         }
         return 1;
     }

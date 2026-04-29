@@ -36,16 +36,17 @@ import javafx.stage.Stage;
 import network.SocketClient;
 
 public class LoginApp extends Application {
-    private static final String APP_BG = "-fx-background-color: #f5f7fb;";
-    private static final String PANEL_STYLE = "-fx-background-color: white; -fx-border-color: #d8e1ef; -fx-border-radius: 8; -fx-background-radius: 8;";
-    private static final String PRIMARY_BUTTON = "-fx-background-color: #006ce4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 14;";
-    private static final String SECONDARY_BUTTON = "-fx-background-color: #eef4ff; -fx-text-fill: #064b9b; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 12;";
-    private static final String DANGER_BUTTON = "-fx-background-color: #fff0f0; -fx-text-fill: #b42318; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 12;";
-    private static final String INPUT_STYLE = "-fx-background-color: white; -fx-border-color: #cbd7e6; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 7;";
-    private static final String TEXT_MUTED = "-fx-text-fill: #516070;";
+    private static final String APP_BG = "-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);";
+    private static final String PANEL_STYLE = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-border-color: rgba(255, 255, 255, 0.3); -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);";
+    private static final String PRIMARY_BUTTON = "-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 24; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);";
+    private static final String SECONDARY_BUTTON = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-text-fill: #2f3e55; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 10 20; -fx-border-color: rgba(102, 126, 234, 0.3); -fx-border-radius: 25; -fx-border-width: 1;";
+    private static final String DANGER_BUTTON = "-fx-background-color: linear-gradient(to right, #ff6b6b, #ee5a52); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 10 20;";
+    private static final String INPUT_STYLE = "-fx-background-color: rgba(255, 255, 255, 0.9); -fx-border-color: rgba(255, 255, 255, 0.5); -fx-border-radius: 25; -fx-background-radius: 25; -fx-padding: 10 15; -fx-font-size: 14px; -fx-prompt-text-fill: #999;";
+    private static final String TEXT_MUTED = "-fx-text-fill: #666666;";
 
     private Stage primaryStage;
     private int currentUserId = -1;
+    private int currentUserRole = 0; // 0 - guest, 1 - owner, 2 - admin
     private ListView<HotelItem> hotelListView;
     private TextArea hotelDetailsArea;
     private ImageView hotelImageView;
@@ -106,62 +107,78 @@ public class LoginApp extends Application {
     }
 
     private void showLoginScreen() {
-        GridPane grid = new GridPane();
-        grid.setPadding(new Insets(24));
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setAlignment(Pos.CENTER);
-        grid.setStyle(PANEL_STYLE + " -fx-padding: 32;");
+        VBox mainContainer = new VBox(20);
+        mainContainer.setPadding(new Insets(40));
+        mainContainer.setAlignment(Pos.CENTER);
+        mainContainer.setStyle(APP_BG);
 
-        Label titleLabel = new Label("Booking System");
-        titleLabel.setStyle("-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #0f2942;");
+        // Иконка или заголовок
+        Label titleLabel = new Label("🏨 Booking System");
+        titleLabel.setStyle("-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);");
+
+        // Панель логина
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(30));
+        grid.setHgap(15);
+        grid.setVgap(15);
+        grid.setAlignment(Pos.CENTER);
+        grid.setStyle(PANEL_STYLE);
+        grid.setMaxWidth(400);
+
+        Label usernameLabel = new Label("👤 Username");
+        usernameLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #333;");
 
         TextField usernameField = new TextField();
-        usernameField.setPromptText("username");
+        usernameField.setPromptText("Enter your username");
         styleInput(usernameField);
 
+        Label passwordLabel = new Label("🔒 Password");
+        passwordLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #333;");
+
         PasswordField passwordField = new PasswordField();
-        passwordField.setPromptText("password");
+        passwordField.setPromptText("Enter your password");
         styleInput(passwordField);
 
-        Button loginBtn = new Button("Login");
-        Button registerBtn = new Button("Register");
+        Button loginBtn = new Button("🚀 Login");
+        Button registerBtn = new Button("📝 Register");
         stylePrimary(loginBtn);
         styleSecondary(registerBtn);
 
         Label messageLabel = new Label();
-        messageLabel.setStyle("-fx-text-fill: red;");
+        messageLabel.setStyle("-fx-text-fill: #ff6b6b; -fx-font-weight: bold;");
 
         loginBtn.setOnAction(e -> {
             String response = send("LOGIN", usernameField.getText(), passwordField.getText());
             if (response.startsWith("SUCCESS")) {
-                currentUserId = Integer.parseInt(response.split(" ")[1]);
+                String[] parts = response.split(" ");
+                currentUserId = Integer.parseInt(parts[1]);
+                currentUserRole = Integer.parseInt(parts[2]); // Сервер должен вернуть роль
                 showMainScreen();
             } else {
-                messageLabel.setText(response);
+                messageLabel.setText("❌ " + response);
             }
         });
 
         registerBtn.setOnAction(e -> {
             String response = send("REGISTER", usernameField.getText(), passwordField.getText());
-            messageLabel.setStyle(response.startsWith("SUCCESS") ? "-fx-text-fill: green;" : "-fx-text-fill: red;");
-            messageLabel.setText(response);
+            messageLabel.setStyle(response.startsWith("SUCCESS") ? "-fx-text-fill: #4CAF50;" : "-fx-text-fill: #ff6b6b;");
+            messageLabel.setText(response.startsWith("SUCCESS") ? "✅ " + response : "❌ " + response);
         });
 
-        HBox buttons = new HBox(10, loginBtn, registerBtn);
-        grid.add(titleLabel, 0, 0, 2, 1);
-        grid.add(new Label("Username:"), 0, 1);
-        grid.add(usernameField, 1, 1);
-        grid.add(new Label("Password:"), 0, 2);
-        grid.add(passwordField, 1, 2);
-        grid.add(buttons, 1, 3);
-        grid.add(messageLabel, 0, 4, 2, 1);
+        HBox buttons = new HBox(15, loginBtn, registerBtn);
+        buttons.setAlignment(Pos.CENTER);
+
+        grid.add(usernameLabel, 0, 0);
+        grid.add(usernameField, 0, 1);
+        grid.add(passwordLabel, 0, 2);
+        grid.add(passwordField, 0, 3);
+        grid.add(buttons, 0, 4);
+        grid.add(messageLabel, 0, 5);
+
+        mainContainer.getChildren().addAll(titleLabel, grid);
 
         primaryStage.setTitle("Login - Booking System");
-        BorderPane page = new BorderPane(grid);
-        page.setPadding(new Insets(36));
-        page.setStyle(APP_BG);
-        primaryStage.setScene(new Scene(page, 520, 390));
+        primaryStage.setScene(new Scene(mainContainer, 600, 500));
         primaryStage.show();
     }
 
@@ -171,31 +188,49 @@ public class LoginApp extends Application {
         tabs.getTabs().add(createBookingsTab());
         tabs.getTabs().add(createWishlistTab());
         tabs.getTabs().add(createProfileTab());
-        tabs.getTabs().add(createOwnerTab());
+        if (currentUserRole >= 1) { // Owner or Admin
+            tabs.getTabs().add(createOwnerTab());
+        }
+        if (currentUserRole == 2) { // Admin only
+            tabs.getTabs().add(createAdminTab());
+        }
 
-        Button logoutBtn = new Button("Logout");
+        // Стиль для вкладок
+        tabs.setStyle("-fx-tab-min-width: 120px; -fx-tab-max-width: 120px; -fx-tab-min-height: 40px;");
+
+        Button logoutBtn = new Button("🚪 Logout");
         styleSecondary(logoutBtn);
         logoutBtn.setOnAction(e -> {
             currentUserId = -1;
+            currentUserRole = 0;
             showLoginScreen();
         });
 
-        Label userLabel = new Label("User ID: " + currentUserId);
-        userLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #0f2942;");
-        statusLabel = new Label("Ready");
-        statusLabel.setStyle(TEXT_MUTED);
-        HBox topBar = new HBox(12, userLabel, statusLabel, logoutBtn);
-        topBar.setPadding(new Insets(10));
+        Label userLabel = new Label("👤 User ID: " + currentUserId + " (Role: " + (currentUserRole == 0 ? "Guest" : currentUserRole == 1 ? "Owner" : "Admin") + ")");
+        userLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 14px;");
+        statusLabel = new Label("✅ Ready");
+        statusLabel.setStyle("-fx-text-fill: #e8f5e8; -fx-font-size: 12px;");
+        HBox topBar = new HBox(20, userLabel, statusLabel);
+        topBar.setPadding(new Insets(15, 20, 15, 20));
         topBar.setAlignment(Pos.CENTER_LEFT);
-        topBar.setStyle("-fx-background-color: white; -fx-border-color: #d8e1ef; -fx-border-width: 0 0 1 0;");
+        topBar.setStyle("-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);");
+
+        HBox topRight = new HBox(logoutBtn);
+        topRight.setPadding(new Insets(15, 20, 15, 20));
+        topRight.setAlignment(Pos.CENTER_RIGHT);
+
+        BorderPane topPane = new BorderPane();
+        topPane.setLeft(topBar);
+        topPane.setRight(topRight);
+        topPane.setStyle("-fx-background-color: linear-gradient(to right, #667eea, #764ba2);");
 
         BorderPane root = new BorderPane();
         root.setStyle(APP_BG);
-        root.setTop(topBar);
+        root.setTop(topPane);
         root.setCenter(tabs);
 
-        primaryStage.setTitle("Booking System");
-        primaryStage.setScene(new Scene(root, 1220, 820));
+        primaryStage.setTitle("🏨 Booking System");
+        primaryStage.setScene(new Scene(root, 1300, 900));
         loadHotels();
     }
 
@@ -338,13 +373,15 @@ public class LoginApp extends Application {
         contactBtn.setOnAction(e -> contactSelectedHotel());
 
         GridPane searchPanel = new GridPane();
-        searchPanel.setHgap(8);
-        searchPanel.setVgap(8);
-        searchPanel.setPadding(new Insets(12));
-        searchPanel.setStyle(PANEL_STYLE + " -fx-padding: 14;");
+        searchPanel.setHgap(10);
+        searchPanel.setVgap(10);
+        searchPanel.setPadding(new Insets(16));
+        searchPanel.setStyle(PANEL_STYLE + " -fx-padding: 16;");
+        searchPanel.setMaxWidth(1080);
         searchPanel.add(new Label("Destination:"), 0, 0);
         searchPanel.add(searchField, 1, 0, 4, 1);
         Button refreshDiscoveryBtn = new Button("Discovery");
+        styleSecondary(refreshDiscoveryBtn);
         refreshDiscoveryBtn.setOnAction(e -> loadDiscoveryPanels());
         searchPanel.add(refreshDiscoveryBtn, 5, 0);
         searchPanel.add(new Label("Check-in:"), 0, 1);
@@ -376,18 +413,19 @@ public class LoginApp extends Application {
         searchPanel.add(guestEmailField, 3, 6);
         searchPanel.add(guestPhoneField, 4, 6);
         searchPanel.add(new HBox(8, bookBtn, wishlistBtn), 5, 6);
-        searchPanel.add(new HBox(8, searchBtn, filterBtn, allBtn, prevPageBtn, nextPageBtn, recommendBtn, reviewsBtn), 1, 7, 5, 1);
-        searchPanel.add(new Label("Review:"), 0, 8);
-        searchPanel.add(reviewRatingSpinner, 1, 8);
-        searchPanel.add(new HBox(6, new Label("Clean"), reviewCleanlinessSpinner, new Label("Comfort"), reviewComfortSpinner, new Label("Staff"), reviewStaffSpinner), 2, 8, 3, 1);
-        searchPanel.add(addReviewBtn, 5, 8);
-        searchPanel.add(new Label("Comment:"), 0, 9);
-        searchPanel.add(reviewCommentField, 1, 9, 2, 1);
-        searchPanel.add(reviewPhotoField, 3, 9, 2, 1);
-        searchPanel.add(new HBox(6, new Label("Sort reviews"), reviewSortBox, new Label("Min"), reviewMinRatingSpinner), 5, 9);
-        searchPanel.add(new Label("Contact:"), 0, 10);
-        searchPanel.add(contactMessageField, 1, 10, 4, 1);
-        searchPanel.add(contactBtn, 5, 10);
+        searchPanel.add(new HBox(8, searchBtn, filterBtn, allBtn), 1, 7, 3, 1);
+        searchPanel.add(new HBox(8, prevPageBtn, nextPageBtn, recommendBtn, reviewsBtn), 1, 8, 4, 1);
+        searchPanel.add(new Label("Review:"), 0, 9);
+        searchPanel.add(reviewRatingSpinner, 1, 9);
+        searchPanel.add(new HBox(6, new Label("Clean"), reviewCleanlinessSpinner, new Label("Comfort"), reviewComfortSpinner, new Label("Staff"), reviewStaffSpinner), 2, 9, 3, 1);
+        searchPanel.add(addReviewBtn, 5, 9);
+        searchPanel.add(new Label("Comment:"), 0, 10);
+        searchPanel.add(reviewCommentField, 1, 10, 2, 1);
+        searchPanel.add(reviewPhotoField, 3, 10, 2, 1);
+        searchPanel.add(new HBox(6, new Label("Sort reviews"), reviewSortBox, new Label("Min"), reviewMinRatingSpinner), 5, 10);
+        searchPanel.add(new Label("Contact:"), 0, 11);
+        searchPanel.add(contactMessageField, 1, 11, 4, 1);
+        searchPanel.add(contactBtn, 5, 11);
 
         hotelListView = new ListView<>();
         hotelListView.setPrefWidth(420);
@@ -709,6 +747,47 @@ public class LoginApp extends Application {
                 loadOwnerData();
             }
         });
+        return tab;
+    }
+
+    private Tab createAdminTab() {
+        TextArea usersArea = new TextArea();
+        usersArea.setEditable(false);
+        styleArea(usersArea);
+
+        TextArea hotelsArea = new TextArea();
+        hotelsArea.setEditable(false);
+        styleArea(hotelsArea);
+
+        TextArea statsArea = new TextArea();
+        statsArea.setEditable(false);
+        styleArea(statsArea);
+
+        Button refreshBtn = new Button("📊 Refresh admin data");
+        stylePrimary(refreshBtn);
+        refreshBtn.setOnAction(e -> {
+            // Load users, hotels, stats
+            String users = send("GET_ALL_USERS");
+            usersArea.setText(users);
+            String hotels = send("GET_ALL_HOTELS");
+            hotelsArea.setText(hotels);
+            String stats = send("GET_STATS");
+            statsArea.setText(stats);
+        });
+
+        VBox root = new VBox(12,
+                new Label("👥 All Users:"), usersArea,
+                new Label("🏨 All Hotels:"), hotelsArea,
+                new Label("📈 Statistics:"), statsArea,
+                refreshBtn);
+        root.setPadding(new Insets(12));
+        root.setStyle(APP_BG);
+
+        ScrollPane scrollPane = new ScrollPane(root);
+        scrollPane.setFitToWidth(true);
+
+        Tab tab = new Tab("Admin panel", scrollPane);
+        tab.setClosable(false);
         return tab;
     }
 
@@ -1164,18 +1243,24 @@ public class LoginApp extends Application {
     private void stylePrimary(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(PRIMARY_BUTTON);
+            button.setMinWidth(120);
+            button.setPrefHeight(42);
         }
     }
 
     private void styleSecondary(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(SECONDARY_BUTTON);
+            button.setMinWidth(120);
+            button.setPrefHeight(42);
         }
     }
 
     private void styleDanger(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(DANGER_BUTTON);
+            button.setMinWidth(120);
+            button.setPrefHeight(42);
         }
     }
 

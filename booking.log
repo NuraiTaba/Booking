@@ -1589,3 +1589,329 @@ Astana|1|5.0|90000
 2026-04-29 19:07:12 - GET_PROFILE|2 → bob|||
 2026-04-29 19:07:13 - MY_HOTELS|2 → EMPTY You haven't added any hotels yet
 2026-04-29 19:07:13 - OWNER_BOOKINGS|2 → EMPTY No bookings
+2026-04-30 00:26:55 - LOGIN alice pass → ERROR Invalid credentials
+2026-04-30 00:26:55 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-30 00:26:55 - GET_BOOKINGS 1 → Booking ID: 3
+Hotel: Hilton
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+
+2026-04-30 00:26:55 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-30 00:26:55 - REGISTER newuser pass123 → SUCCESS User registered
+2026-04-30 00:26:55 - GET_HOTELS → 2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-30 00:26:55 - SEARCH Астана → EMPTY No hotels found in Астана
+2026-04-30 00:26:55 - HOTEL_DETAIL 1 → 1|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900,https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900,https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation until 24 hours before arrival; No smoking rooms available.|Standard Room - 85000 KZT - breakfast included; Deluxe Room - 115000 KZT - spa access; Suite - 180000 KZT - city view and lounge access|rixos.almaty@example.com
+2026-04-30 00:26:55 - MY_HOTELS 13 → EMPTY You haven't added any hotels yet
+2026-04-30 00:28:40 - REGISTER|| → ERROR Username cannot be empty
+2026-04-30 00:28:41 - REGISTER|| → ERROR Username cannot be empty
+2026-04-30 00:28:41 - REGISTER|| → ERROR Username cannot be empty
+2026-04-30 00:28:41 - REGISTER|| → ERROR Username cannot be empty
+2026-04-30 00:28:42 - REGISTER|| → ERROR Username cannot be empty
+2026-04-30 00:28:43 - LOGIN|| → ERROR Username cannot be empty
+2026-04-30 00:28:45 - LOGIN|| → ERROR Username cannot be empty
+2026-04-30 00:28:53 - REGISTER|arina|567 → SUCCESS User registered
+2026-04-30 00:28:55 - LOGIN|arina|567 → SUCCESS 4
+2026-04-30 00:28:56 - GET_HOTELS|rating → 2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-30 00:28:56 - HOTEL_DETAIL|2 → 2|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 00:28:56 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 00:18:05
+
+2026-04-30 00:28:56 - RECENT_SEARCHES|4 → EMPTY No recent searches
+2026-04-30 00:28:56 - POPULAR_DESTINATIONS → Almaty|2|4.6|45000
+Astana|1|5.0|90000
+
+2026-04-30 00:29:19 - GET_BOOKINGS|4 → EMPTY No bookings found
+2026-04-30 00:29:20 - GET_WISHLIST|4 → EMPTY Wishlist is empty
+2026-04-30 00:29:21 - GET_PROFILE|4 → arina|||
+2026-04-30 00:29:22 - MY_HOTELS|4 → EMPTY You haven't added any hotels yet
+2026-04-30 00:29:22 - OWNER_BOOKINGS|4 → EMPTY No bookings
+2026-04-30 00:39:27 - REGISTER|| → ERROR Username cannot be empty
+2026-04-30 00:39:28 - LOGIN|| → ERROR Username cannot be empty
+2026-04-30 00:39:35 - LOGIN|arina|345 → ERROR Invalid credentials
+2026-04-30 00:39:36 - REGISTER|arina|345 → ERROR Username already exists
+2026-04-30 00:39:37 - REGISTER|arina|345 → ERROR Username already exists
+2026-04-30 00:39:37 - REGISTER|arina|345 → ERROR Username already exists
+2026-04-30 00:39:38 - LOGIN|arina|345 → ERROR Invalid credentials
+2026-04-30 00:39:43 - LOGIN|arin13|345 → ERROR Invalid credentials
+2026-04-30 00:39:43 - LOGIN|arin13|345 → ERROR Invalid credentials
+2026-04-30 00:39:44 - LOGIN|arin13|345 → ERROR Invalid credentials
+2026-04-30 00:39:51 - LOGIN|vlad|345 → ERROR Invalid credentials
+2026-04-30 00:39:52 - REGISTER|vlad|345 → ERROR Username already exists
+2026-04-30 00:39:58 - LOGIN|vladkim|345 → ERROR Invalid credentials
+2026-04-30 00:39:59 - REGISTER|vladkim|345 → ERROR Username already exists
+2026-04-30 00:40:03 - LOGIN|vladkim|567 → ERROR Invalid credentials
+2026-04-30 00:40:04 - LOGIN|vladkim|567 → ERROR Invalid credentials
+2026-04-30 00:40:44 - REGISTER|vladkim|567 → ERROR Username already exists
+2026-04-30 00:40:44 - REGISTER|vladkim|567 → ERROR Username already exists
+2026-04-30 00:40:45 - REGISTER|vladkim|567 → ERROR Username already exists
+2026-04-30 00:40:45 - REGISTER|vladkim|567 → ERROR Username already exists
+2026-04-30 00:40:52 - REGISTER|arinaki,|567 → ERROR Username already exists
+2026-04-30 00:40:53 - REGISTER|arinaki,|567 → ERROR Username already exists
+2026-04-30 00:40:56 - REGISTER|arinaki,|789 → ERROR Username already exists
+2026-04-30 00:40:59 - REGISTER|arinakim|789 → ERROR Username already exists
+2026-04-30 00:40:59 - REGISTER|arinakim|789 → ERROR Username already exists
+2026-04-30 00:40:59 - REGISTER|arinakim|789 → ERROR Username already exists
+2026-04-30 00:49:00 - REGISTER|| → ERROR Username cannot be empty
+2026-04-30 00:49:10 - REGISTER|arinak|456 → ERROR Username already exists
+2026-04-30 00:49:11 - REGISTER|arinak|456 → ERROR Username already exists
+2026-04-30 00:49:11 - REGISTER|arinak|456 → ERROR Username already exists
+2026-04-30 00:49:12 - LOGIN|arinak|456 → ERROR Invalid credentials
+2026-04-30 00:49:15 - REGISTER|arinak|456 → ERROR Username already exists
+2026-04-30 00:49:16 - REGISTER|arinak|456 → ERROR Username already exists
+2026-04-30 00:49:16 - REGISTER|arinak|456 → ERROR Username already exists
+2026-04-30 00:49:53 - LOGIN|arinak|456 → ERROR Invalid credentials
+2026-04-30 00:50:48 - REGISTER|markk|5678 → ERROR Username already exists
+2026-04-30 00:50:49 - LOGIN|markk|5678 → ERROR Invalid credentials
+2026-04-30 01:32:55 - LOGIN alice pass → ERROR Invalid credentials
+2026-04-30 01:32:55 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-30 01:32:55 - GET_BOOKINGS 1 → Booking ID: 1
+Hotel: Rixos Almaty
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+Booking ID: 2
+Hotel: Rixos President Astana
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+Booking ID: 3
+Hotel: Hilton
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+
+2026-04-30 01:32:55 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-30 01:32:55 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-30 01:32:55 - GET_HOTELS → 2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-30 01:32:55 - SEARCH Астана → EMPTY No hotels found in Астана
+2026-04-30 01:32:55 - HOTEL_DETAIL 1 → 1|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900,https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900,https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation until 24 hours before arrival; No smoking rooms available.|Standard Room - 85000 KZT - breakfast included; Deluxe Room - 115000 KZT - spa access; Suite - 180000 KZT - city view and lounge access|rixos.almaty@example.com
+2026-04-30 01:32:55 - MY_HOTELS 13 → EMPTY You haven't added any hotels yet
+2026-04-30 01:34:09 - LOGIN alice pass → ERROR Invalid credentials
+2026-04-30 01:34:09 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-30 01:34:09 - GET_BOOKINGS 1 → Booking ID: 1
+Hotel: Rixos Almaty
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+Booking ID: 2
+Hotel: Rixos President Astana
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+Booking ID: 3
+Hotel: Hilton
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+
+2026-04-30 01:34:09 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-30 01:34:09 - REGISTER newuser pass123 → SUCCESS User registered
+2026-04-30 01:34:09 - GET_HOTELS → 2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-30 01:34:09 - SEARCH Астана → EMPTY No hotels found in Астана
+2026-04-30 01:34:09 - HOTEL_DETAIL 1 → 1|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900,https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900,https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation until 24 hours before arrival; No smoking rooms available.|Standard Room - 85000 KZT - breakfast included; Deluxe Room - 115000 KZT - spa access; Suite - 180000 KZT - city view and lounge access|rixos.almaty@example.com
+2026-04-30 01:34:09 - MY_HOTELS 13 → EMPTY You haven't added any hotels yet
+2026-04-30 01:34:17 - LOGIN newuser pass123 → SUCCESS 3 0
+2026-04-30 01:37:09 - LOGIN alice pass → ERROR Invalid credentials
+2026-04-30 01:37:09 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-30 01:37:09 - GET_BOOKINGS 1 → Booking ID: 3
+Hotel: Hilton
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+
+2026-04-30 01:37:09 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-30 01:37:09 - REGISTER newuser pass123 → SUCCESS User registered
+2026-04-30 01:37:09 - GET_HOTELS → 1|Rixos Almaty|Almaty|5|85000|4.7|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos President Astana|Astana|5|90000|4.7|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-30 01:37:09 - SEARCH Астана → EMPTY No hotels found in Астана
+2026-04-30 01:37:10 - HOTEL_DETAIL 1 → 1|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.7|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900,https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900,https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation until 24 hours before arrival; No smoking rooms available.|Standard Room - 85000 KZT - breakfast included; Deluxe Room - 115000 KZT - spa access; Suite - 180000 KZT - city view and lounge access|rixos.almaty@example.com
+2026-04-30 01:37:10 - MY_HOTELS 13 → EMPTY You haven't added any hotels yet
+2026-04-30 01:37:14 - LOGIN demo_owner demo → SUCCESS 1 1
+2026-04-30 01:37:14 - LOGIN admin admin → SUCCESS 3 2
+2026-04-30 01:37:14 - LOGIN newuser pass123 → SUCCESS 4 0
+2026-04-30 01:38:00 - REGISTER|vladkim|789 → SUCCESS User registered
+2026-04-30 01:38:02 - LOGIN|vladkim|789 → SUCCESS 5 0
+2026-04-30 01:38:02 - GET_HOTELS|rating → 1|Rixos Almaty|Almaty|5|85000|4.7|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos President Astana|Astana|5|90000|4.7|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-30 01:38:02 - HOTEL_DETAIL|1 → 1|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.7|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900,https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900,https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation until 24 hours before arrival; No smoking rooms available.|Standard Room - 85000 KZT - breakfast included; Deluxe Room - 115000 KZT - spa access; Suite - 180000 KZT - city view and lounge access|rixos.almaty@example.com
+2026-04-30 01:38:02 - GET_REVIEWS|1|date|1 → EMPTY No reviews yet
+2026-04-30 01:38:02 - RECENT_SEARCHES|5 → EMPTY No recent searches
+2026-04-30 01:38:02 - POPULAR_DESTINATIONS → Almaty|2|4.7|45000
+Astana|1|4.7|90000
+
+2026-04-30 01:38:06 - GET_BOOKINGS|5 → EMPTY No bookings found
+2026-04-30 01:38:07 - GET_WISHLIST|5 → EMPTY Wishlist is empty
+2026-04-30 01:38:08 - GET_PROFILE|5 → vladkim|||
+2026-04-30 01:42:52 - REGISTER|arinakim|567 → SUCCESS User registered
+2026-04-30 01:42:55 - LOGIN|arinakim|567 → SUCCESS 4 0
+2026-04-30 01:42:56 - GET_HOTELS|rating → 2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-30 01:42:56 - HOTEL_DETAIL|2 → 2|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 01:42:56 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:42:56 - RECENT_SEARCHES|4 → EMPTY No recent searches
+2026-04-30 01:42:56 - POPULAR_DESTINATIONS → Almaty|2|4.6|45000
+Astana|1|5.0|90000
+
+2026-04-30 01:43:12 - GET_BOOKINGS|4 → EMPTY No bookings found
+2026-04-30 01:43:14 - GET_WISHLIST|4 → EMPTY Wishlist is empty
+2026-04-30 01:43:16 - GET_PROFILE|4 → arinakim|||
+2026-04-30 01:43:20 - GET_PROFILE|4 → arinakim|||
+2026-04-30 01:43:21 - UPDATE_PROFILE|4||| → SUCCESS Profile updated
+2026-04-30 01:45:06 - GET_PROFILE|4 → arinakim|||
+2026-04-30 01:45:07 - GET_WISHLIST|4 → EMPTY Wishlist is empty
+2026-04-30 01:45:08 - GET_BOOKINGS|4 → EMPTY No bookings found
+2026-04-30 01:45:15 - AUTOCOMPLETE|Al → Rixos Almaty
+Almaty
+
+2026-04-30 01:45:16 - AUTOCOMPLETE|Alm → Rixos Almaty
+Almaty
+
+2026-04-30 01:45:16 - AUTOCOMPLETE|Alma → Rixos Almaty
+Almaty
+
+2026-04-30 01:45:16 - AUTOCOMPLETE|Almat → Rixos Almaty
+Almaty
+
+2026-04-30 01:45:17 - AUTOCOMPLETE|Almaty → Rixos Almaty
+Almaty
+
+2026-04-30 01:45:18 - RECENT_SEARCHES|4 → EMPTY No recent searches
+2026-04-30 01:45:18 - POPULAR_DESTINATIONS → Almaty|2|4.6|45000
+Astana|1|5.0|90000
+
+2026-04-30 01:45:53 - SEARCH|Almaty → 1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-30 01:45:53 - SAVE_SEARCH|4|Almaty → SUCCESS Search saved
+2026-04-30 01:45:53 - HOTEL_DETAIL|1 → 1|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900,https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900,https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation until 24 hours before arrival; No smoking rooms available.|Standard Room - 85000 KZT - breakfast included; Deluxe Room - 115000 KZT - spa access; Suite - 180000 KZT - city view and lounge access|rixos.almaty@example.com
+2026-04-30 01:45:53 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Excellent location, clean rooms and very helpful staff. - demo_guest||2026-04-30 01:39:23
+4*|Cleanliness 5, Comfort 5, Staff 5|Great breakfast and spa. The room was comfortable. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:45:53 - RECENT_SEARCHES|4 → Almaty
+
+2026-04-30 01:46:00 - FILTER|0|650000|1|Hotel|false|false|false|false|false||false|price → 3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 01:46:00 - HOTEL_DETAIL|3 → 3|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900|Hotel|Medeu|1.2|73|12|true|true|false|false|true|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900,https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation before arrival day.|Economy Room - 45000 KZT - city view; Standard Room - 55000 KZT - breakfast optional; Family Room - 72000 KZT - two beds|kazakhstan.hotel@example.com
+2026-04-30 01:46:00 - GET_REVIEWS|3|date|1 → EMPTY No reviews yet
+2026-04-30 01:46:01 - FILTER|0|650000|1|Hotel|false|false|false|false|false||false|price → 3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 01:46:01 - HOTEL_DETAIL|3 → 3|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900|Hotel|Medeu|1.2|73|12|true|true|false|false|true|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900,https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation before arrival day.|Economy Room - 45000 KZT - city view; Standard Room - 55000 KZT - breakfast optional; Family Room - 72000 KZT - two beds|kazakhstan.hotel@example.com
+2026-04-30 01:46:01 - GET_REVIEWS|3|date|1 → EMPTY No reviews yet
+2026-04-30 01:46:02 - GET_HOTELS|price → 3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 01:46:02 - HOTEL_DETAIL|3 → 3|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900|Hotel|Medeu|1.2|73|12|true|true|false|false|true|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900,https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation before arrival day.|Economy Room - 45000 KZT - city view; Standard Room - 55000 KZT - breakfast optional; Family Room - 72000 KZT - two beds|kazakhstan.hotel@example.com
+2026-04-30 01:46:02 - GET_REVIEWS|3|date|1 → EMPTY No reviews yet
+2026-04-30 01:46:02 - RECENT_SEARCHES|4 → Almaty
+
+2026-04-30 01:46:02 - POPULAR_DESTINATIONS → Almaty|2|4.6|45000
+Astana|1|5.0|90000
+
+2026-04-30 01:46:03 - RECOMMENDATIONS|4 → 2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-30 01:46:03 - HOTEL_DETAIL|2 → 2|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 01:46:03 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:04 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:05 - GET_HOTELS|price → 3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 01:46:05 - HOTEL_DETAIL|3 → 3|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900|Hotel|Medeu|1.2|73|12|true|true|false|false|true|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900,https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation before arrival day.|Economy Room - 45000 KZT - city view; Standard Room - 55000 KZT - breakfast optional; Family Room - 72000 KZT - two beds|kazakhstan.hotel@example.com
+2026-04-30 01:46:05 - GET_REVIEWS|3|date|1 → EMPTY No reviews yet
+2026-04-30 01:46:05 - RECENT_SEARCHES|4 → Almaty
+
+2026-04-30 01:46:05 - POPULAR_DESTINATIONS → Almaty|2|4.6|45000
+Astana|1|5.0|90000
+
+2026-04-30 01:46:06 - RECOMMENDATIONS|4 → 2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-30 01:46:06 - HOTEL_DETAIL|2 → 2|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 01:46:06 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:08 - HOTEL_DETAIL|3 → 3|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900|Hotel|Medeu|1.2|73|12|true|true|false|false|true|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900,https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation before arrival day.|Economy Room - 45000 KZT - city view; Standard Room - 55000 KZT - breakfast optional; Family Room - 72000 KZT - two beds|kazakhstan.hotel@example.com
+2026-04-30 01:46:08 - GET_REVIEWS|3|date|1 → EMPTY No reviews yet
+2026-04-30 01:46:09 - HOTEL_DETAIL|1 → 1|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900,https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900,https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation until 24 hours before arrival; No smoking rooms available.|Standard Room - 85000 KZT - breakfast included; Deluxe Room - 115000 KZT - spa access; Suite - 180000 KZT - city view and lounge access|rixos.almaty@example.com
+2026-04-30 01:46:09 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Excellent location, clean rooms and very helpful staff. - demo_guest||2026-04-30 01:39:23
+4*|Cleanliness 5, Comfort 5, Staff 5|Great breakfast and spa. The room was comfortable. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:10 - HOTEL_DETAIL|2 → 2|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 01:46:10 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:13 - RECOMMENDATIONS|4 → 2|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+3|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+1|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-30 01:46:13 - HOTEL_DETAIL|2 → 2|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 01:46:13 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:14 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:16 - HOTEL_DETAIL|3 → 3|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900|Hotel|Medeu|1.2|73|12|true|true|false|false|true|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900,https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation before arrival day.|Economy Room - 45000 KZT - city view; Standard Room - 55000 KZT - breakfast optional; Family Room - 72000 KZT - two beds|kazakhstan.hotel@example.com
+2026-04-30 01:46:16 - GET_REVIEWS|3|date|1 → EMPTY No reviews yet
+2026-04-30 01:46:16 - HOTEL_DETAIL|2 → 2|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 01:46:16 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:18 - HOTEL_DETAIL|1 → 1|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900,https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900,https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation until 24 hours before arrival; No smoking rooms available.|Standard Room - 85000 KZT - breakfast included; Deluxe Room - 115000 KZT - spa access; Suite - 180000 KZT - city view and lounge access|rixos.almaty@example.com
+2026-04-30 01:46:18 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Excellent location, clean rooms and very helpful staff. - demo_guest||2026-04-30 01:39:23
+4*|Cleanliness 5, Comfort 5, Staff 5|Great breakfast and spa. The room was comfortable. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:19 - HOTEL_DETAIL|2 → 2|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 01:46:19 - GET_REVIEWS|2|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-30 01:39:23
+
+2026-04-30 01:46:38 - GET_WISHLIST|4 → EMPTY Wishlist is empty
+2026-04-30 01:46:38 - GET_BOOKINGS|4 → EMPTY No bookings found
+2026-04-30 01:46:39 - GET_PROFILE|4 → arinakim|||

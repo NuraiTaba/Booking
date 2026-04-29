@@ -57,7 +57,15 @@ public class BookingController {
             return "ERROR Usage: UPDATE_HOTEL id name city address stars price description ownerId";
             case "LOGIN":
                 if (parts.length == 3) {
-                    return authService.login(parts[1], parts[2]);
+                    String loginResult = authService.login(parts[1], parts[2]);
+                    if (loginResult.startsWith("SUCCESS")) {
+                        // Добавить роль
+                        String[] loginParts = loginResult.split(" ");
+                        int userId = Integer.parseInt(loginParts[1]);
+                        int role = repository.getUserRole(userId);
+                        return "SUCCESS " + userId + " " + role;
+                    }
+                    return loginResult;
                 }
                 return "ERROR Usage: LOGIN username password";
                 
@@ -380,6 +388,15 @@ public class BookingController {
                     }
                 }
                 return "ERROR Usage: FILTER minPrice maxPrice stars propertyType wifi parking pool breakfast freeCancellation district availableOnly sortBy";
+                
+            case "GET_ALL_USERS":
+                return repository.getAllUsers();
+                
+            case "GET_ALL_HOTELS":
+                return repository.getAllHotelsAdmin();
+                
+            case "GET_STATS":
+                return repository.getStats();
                 
             default:
                 return "ERROR Unknown command: " + command;

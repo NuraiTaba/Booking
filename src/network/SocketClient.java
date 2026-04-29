@@ -5,7 +5,7 @@ import java.net.*;
 
 public class SocketClient {
     private static final String SERVER_HOST = "localhost";
-    private static final int SERVER_PORT = 5000;
+    private static final int SERVER_PORT = 6000;
 
     public static String sendCommand(String command) {
         try (Socket socket = new Socket(SERVER_HOST, SERVER_PORT);

@@ -31,7 +31,7 @@ public class AuthService implements IAuthService {  // ← implements
             validateCredentials(username, password);
             validatePassword(password);
             
-            boolean success = repo.register(username, password);
+            boolean success = repo.register(username, password, 0); // Default role: guest
             if (success) {
                 return "SUCCESS User registered";
             }
