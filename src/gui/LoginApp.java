@@ -13,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.ScrollPane;
@@ -206,6 +207,7 @@ public class LoginApp extends Application {
             showLoginScreen();
         });
 
+<<<<<<< Updated upstream
         Label userLabel = new Label("👤 User ID: " + currentUserId + " (Role: " + (currentUserRole == 0 ? "Guest" : currentUserRole == 1 ? "Owner" : "Admin") + ")");
         userLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 14px;");
         statusLabel = new Label("✅ Ready");
@@ -223,6 +225,16 @@ public class LoginApp extends Application {
         topPane.setLeft(topBar);
         topPane.setRight(topRight);
         topPane.setStyle("-fx-background-color: linear-gradient(to right, #667eea, #764ba2);");
+=======
+        Label userLabel = new Label("User ID: " + currentUserId);
+        userLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: white;");
+        statusLabel = new Label("Ready");
+        statusLabel.setStyle("-fx-text-fill: #d8e7ff;");
+        HBox topBar = new HBox(12, userLabel, statusLabel, logoutBtn);
+        topBar.setPadding(new Insets(10));
+        topBar.setAlignment(Pos.CENTER_LEFT);
+        topBar.setStyle("-fx-background-color: " + BOOKING_BLUE + "; -fx-border-color: #002b6f; -fx-border-width: 0 0 1 0;");
+>>>>>>> Stashed changes
 
         BorderPane root = new BorderPane();
         root.setStyle(APP_BG);
@@ -373,11 +385,18 @@ public class LoginApp extends Application {
         contactBtn.setOnAction(e -> contactSelectedHotel());
 
         GridPane searchPanel = new GridPane();
+<<<<<<< Updated upstream
         searchPanel.setHgap(10);
         searchPanel.setVgap(10);
         searchPanel.setPadding(new Insets(16));
         searchPanel.setStyle(PANEL_STYLE + " -fx-padding: 16;");
         searchPanel.setMaxWidth(1080);
+=======
+        searchPanel.setHgap(8);
+        searchPanel.setVgap(8);
+        searchPanel.setPadding(new Insets(12));
+        searchPanel.setStyle("-fx-background-color: " + BOOKING_YELLOW + "; -fx-border-color: #e1a900; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 14;");
+>>>>>>> Stashed changes
         searchPanel.add(new Label("Destination:"), 0, 0);
         searchPanel.add(searchField, 1, 0, 4, 1);
         Button refreshDiscoveryBtn = new Button("Discovery");
@@ -427,9 +446,30 @@ public class LoginApp extends Application {
         searchPanel.add(contactMessageField, 1, 11, 4, 1);
         searchPanel.add(contactBtn, 5, 11);
 
+        Label pageTitle = new Label("Find your next stay");
+        pageTitle.setStyle("-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;");
+        Label pageSubtitle = new Label("Search hotels, apartments and hostels with filters, reviews and saved favorites");
+        pageSubtitle.setStyle("-fx-font-size: 13px; -fx-text-fill: #d8e7ff;");
+        VBox hero = new VBox(4, pageTitle, pageSubtitle);
+        hero.setPadding(new Insets(18));
+        hero.setStyle("-fx-background-color: " + BOOKING_BLUE + "; -fx-background-radius: 0 0 14 14;");
+
         hotelListView = new ListView<>();
-        hotelListView.setPrefWidth(420);
+        hotelListView.setPrefWidth(460);
         styleList(hotelListView);
+        hotelListView.setCellFactory(list -> new ListCell<HotelItem>() {
+            @Override
+            protected void updateItem(HotelItem hotel, boolean empty) {
+                super.updateItem(hotel, empty);
+                if (empty || hotel == null) {
+                    setGraphic(null);
+                    setText(null);
+                } else {
+                    setGraphic(createHotelCard(hotel));
+                    setText(null);
+                }
+            }
+        });
         hotelListView.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
             selectedHotel = newValue;
             showHotelDetails(newValue);
@@ -470,7 +510,7 @@ public class LoginApp extends Application {
         searchScroll.setPrefViewportHeight(260);
         searchScroll.setStyle("-fx-background-color: transparent; -fx-background: transparent;");
 
-        VBox root = new VBox(searchScroll, content);
+        VBox root = new VBox(hero, searchScroll, content);
         root.setStyle(APP_BG);
         VBox.setVgrow(content, Priority.ALWAYS);
 
@@ -873,7 +913,8 @@ public class LoginApp extends Application {
                             parts[2],
                             Integer.parseInt(parts[3]),
                             Integer.parseInt(parts[4]),
-                            Double.parseDouble(parts[5])));
+                            Double.parseDouble(parts[5]),
+                            parts.length >= 7 ? parts[6] : ""));
                 } catch (NumberFormatException ignored) {
                     setStatus("Skipped invalid hotel row: " + line);
                 }
@@ -1276,6 +1317,45 @@ public class LoginApp extends Application {
         listView.setStyle("-fx-background-color: white; -fx-border-color: #d8e1ef; -fx-border-radius: 8; -fx-background-radius: 8;");
     }
 
+    private HBox createHotelCard(HotelItem hotel) {
+        ImageView thumb = new ImageView();
+        thumb.setFitWidth(118);
+        thumb.setFitHeight(92);
+        thumb.setPreserveRatio(false);
+        thumb.setSmooth(true);
+        if (hotel.imageUrl != null && !hotel.imageUrl.trim().isEmpty() && !hotel.imageUrl.equalsIgnoreCase("null")) {
+            thumb.setImage(new Image(hotel.imageUrl, true));
+        }
+
+        Label name = new Label(hotel.name);
+        name.setWrapText(true);
+        name.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: " + BOOKING_BLUE + ";");
+
+        Label meta = new Label(hotel.city + "  |  " + hotel.stars + " stars");
+        meta.setStyle(TEXT_MUTED);
+
+        Label rating = new Label(String.format("%.1f", hotel.rating));
+        rating.setStyle("-fx-background-color: " + BOOKING_BLUE + "; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 5 8;");
+
+        Label price = new Label(hotel.price + " KZT");
+        price.setStyle("-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #0f2942;");
+
+        Label note = new Label("Free cancellation options");
+        note.setStyle("-fx-text-fill: #008234; -fx-font-size: 11px;");
+
+        VBox textBox = new VBox(5, name, meta, note);
+        HBox.setHgrow(textBox, Priority.ALWAYS);
+
+        VBox rightBox = new VBox(8, rating, price);
+        rightBox.setAlignment(Pos.TOP_RIGHT);
+
+        HBox card = new HBox(12, thumb, textBox, rightBox);
+        card.setPadding(new Insets(10));
+        card.setAlignment(Pos.TOP_LEFT);
+        card.setStyle("-fx-background-color: white; -fx-border-color: #d8e1ef; -fx-border-radius: 10; -fx-background-radius: 10;");
+        return card;
+    }
+
     private static class HotelItem {
         private final int id;
         private final String name;
@@ -1283,14 +1363,16 @@ public class LoginApp extends Application {
         private final int stars;
         private final int price;
         private final double rating;
+        private final String imageUrl;
 
-        private HotelItem(int id, String name, String city, int stars, int price, double rating) {
+        private HotelItem(int id, String name, String city, int stars, int price, double rating, String imageUrl) {
             this.id = id;
             this.name = name;
             this.city = city;
             this.stars = stars;
             this.price = price;
             this.rating = rating;
+            this.imageUrl = imageUrl;
         }
 
         @Override

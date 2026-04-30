@@ -1,0 +1,1692 @@
+2026-04-24 16:54:49 - LOGIN alice pass → SUCCESS 1
+2026-04-24 16:54:49 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-24 16:54:49 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+
+2026-04-24 16:54:49 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-24 16:54:49 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-24 17:10:01 - LOGIN alice pass → SUCCESS 1
+2026-04-24 17:10:01 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-24 17:10:01 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+
+2026-04-24 17:10:01 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-24 17:10:01 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-24 17:47:10 - LOGIN alice pass → SUCCESS 1
+2026-04-24 18:02:43 - LOGIN alice pass → SUCCESS 1
+2026-04-24 18:02:43 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-24 18:02:43 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+
+2026-04-24 18:02:43 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-24 18:02:43 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-24 18:10:18 - LOGIN alice pass → SUCCESS 1
+2026-04-24 18:10:39 - BOOK 1 Almaty 2026-04-18 → SUCCESS Booking created
+2026-04-24 18:10:43 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:10:55 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:10:56 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:10:57 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:11:02 - BOOK 1   → ERROR Usage: BOOK userId hotel date
+2026-04-24 18:11:15 - BOOK 1 Almaty 2026-04-18 → SUCCESS Booking created
+2026-04-24 18:11:18 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:12:01 - BOOK 1 Almaty 2026-04-18 → SUCCESS Booking created
+2026-04-24 18:12:53 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:13:36 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:13:36 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:26 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:26 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:26 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:26 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:26 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:27 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:27 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:27 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:27 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:28 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:28 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:29 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:29 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:29 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:29 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:29 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:30 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:30 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:30 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:30 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:30 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:31 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:31 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:31 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:31 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:32 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:32 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:32 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:32 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:33 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:33 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:33 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:33 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:33 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:34 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:34 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:34 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:34 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:35 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:35 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:35 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:14:35 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:29:34 - LOGIN alice pass → SUCCESS 1
+2026-04-24 18:29:45 - BOOK 1 Almaty 2026-04-18 → SUCCESS Booking created
+2026-04-24 18:29:47 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:29:56 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:30:00 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:39:31 - BOOK 1 Hilton 2026-08-15 → SUCCESS Booking created
+2026-04-24 18:39:32 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-24 18:40:14 - BOOK 1 Rixos 2026-09-10 → SUCCESS Booking created
+2026-04-24 18:40:15 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-27 20:16:24 - LOGIN alice pass → SUCCESS 1
+2026-04-27 20:16:28 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-27 20:23:29 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-28 11:13:10 - LOGIN alice pass → SUCCESS 1
+2026-04-28 11:13:13 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-28 11:16:24 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-28 11:16:39 - BOOK 1 Almaty 2026-05-06 → SUCCESS Booking created
+2026-04-28 11:16:41 - BOOK 1   → ERROR Usage: BOOK userId hotel date
+2026-04-28 11:16:51 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-28 11:16:53 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+
+2026-04-28 11:17:05 - BOOK 1 Almaty 2026-03-02 → SUCCESS Booking created
+2026-04-28 11:17:08 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 11:17:10 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 11:17:10 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 11:17:11 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 11:17:11 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 11:17:11 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 11:31:05 - REGISTER   → ERROR Usage: REGISTER username password
+2026-04-28 11:31:29 - REGISTER Anna pass → SUCCESS User registered
+2026-04-28 11:31:30 - REGISTER Anna pass → ERROR Username already exists
+2026-04-28 11:31:32 - LOGIN Anna pass → SUCCESS 9
+2026-04-28 11:31:35 - GET_BOOKINGS 9 → EMPTY No bookings found
+2026-04-28 11:31:57 - BOOK 9 Prefdgd 2026-01-01 → SUCCESS Booking created
+2026-04-28 11:31:59 - GET_BOOKINGS 9 → Booking [userId=9, hotel=Prefdgd, date=2026-01-01]
+
+2026-04-28 11:32:06 - GET_BOOKINGS 9 → Booking [userId=9, hotel=Prefdgd, date=2026-01-01]
+
+2026-04-28 11:32:12 - REGISTER   → ERROR Usage: REGISTER username password
+2026-04-28 11:40:28 - GET / HTTP/1.1 → ERROR Unknown command: GET
+2026-04-28 11:40:29 - GET / HTTP/1.1 → ERROR Unknown command: GET
+2026-04-28 11:40:33 - GET / HTTP/1.1 → ERROR Unknown command: GET
+2026-04-28 11:40:34 - GET / HTTP/1.1 → ERROR Unknown command: GET
+2026-04-28 12:03:31 - LOGIN alice pass → SUCCESS 1
+2026-04-28 12:03:38 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 12:39:57 - REGISTER arina pass → SUCCESS User registered
+2026-04-28 12:39:57 - REGISTER arina pass → ERROR Username already exists
+2026-04-28 12:39:59 - LOGIN arina pass → SUCCESS 11
+2026-04-28 12:40:11 - BOOK 11 Almaty 2026-01-01 → SUCCESS Booking created
+2026-04-28 12:40:11 - BOOK 11   → ERROR Usage: BOOK userId hotel date
+2026-04-28 12:40:13 - GET_BOOKINGS 11 → Booking [userId=11, hotel=Almaty, date=2026-01-01]
+
+2026-04-28 12:40:33 - GET_BOOKINGS 11 → Booking [userId=11, hotel=Almaty, date=2026-01-01]
+
+2026-04-28 21:36:49 - LOGIN alice pass → SUCCESS 1
+2026-04-28 21:36:49 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-28 21:36:49 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 21:36:49 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-28 21:36:49 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-28 21:39:44 - LOGIN alice pass → SUCCESS 1
+2026-04-28 21:39:44 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-28 21:39:44 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 21:39:44 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-28 21:39:44 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-28 21:47:01 - LOGIN alice pass → SUCCESS 1
+2026-04-28 21:47:01 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-28 21:47:01 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 21:47:01 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-28 21:47:01 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-28 21:50:27 - LOGIN alice pass → SUCCESS 1
+2026-04-28 21:50:27 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-28 21:50:27 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 21:50:27 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-28 21:50:27 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-28 21:50:27 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 21:50:27 - SEARCH Астана → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 21:50:27 - HOTEL_DETAIL 1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-28 21:50:27 - MY_HOTELS 13 → 1|Hilton Astana|Астана|5|45000|ACTIVE
+2|Rixos Almaty|Алматы|5|60000|ACTIVE
+3|Marriott Nur-Sultan|Астана|4|55000|ACTIVE
+
+2026-04-28 21:50:41 - LOGIN alice pass → SUCCESS 1
+2026-04-28 21:50:41 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-28 21:50:41 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 21:50:41 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-28 21:50:41 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-28 21:50:41 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 21:50:41 - SEARCH Астана → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 21:50:41 - HOTEL_DETAIL 1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-28 21:50:41 - MY_HOTELS 13 → 1|Hilton Astana|Астана|5|45000|ACTIVE
+2|Rixos Almaty|Алматы|5|60000|ACTIVE
+3|Marriott Nur-Sultan|Астана|4|55000|ACTIVE
+
+2026-04-28 22:07:12 - LOGIN alice pass → SUCCESS 1
+2026-04-28 22:07:12 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-28 22:07:13 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 22:07:13 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-28 22:07:13 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-28 22:07:13 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 22:07:14 - SEARCH Астана → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 22:07:14 - HOTEL_DETAIL 1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-28 22:07:14 - MY_HOTELS 13 → 1|Hilton Astana|Астана|5|45000|ACTIVE
+2|Rixos Almaty|Алматы|5|60000|ACTIVE
+3|Marriott Nur-Sultan|Астана|4|55000|ACTIVE
+
+2026-04-28 22:08:27 - FILTER 30000 60000 4 → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 22:16:38 - LOGIN alice pass → SUCCESS 1
+2026-04-28 22:16:38 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-28 22:16:38 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+
+2026-04-28 22:16:38 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-28 22:16:38 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-28 22:16:38 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 22:16:38 - SEARCH Астана → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-28 22:16:38 - HOTEL_DETAIL 1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-28 22:16:38 - MY_HOTELS 13 → 1|Hilton Astana|Астана|5|45000|ACTIVE
+2|Rixos Almaty|Алматы|5|60000|ACTIVE
+3|Marriott Nur-Sultan|Астана|4|55000|ACTIVE
+
+2026-04-28 22:16:58 - LOGIN alice pass → SUCCESS 1
+2026-04-28 22:17:11 - BOOK 1 Qqqqq 2026-01-10 → SUCCESS Booking created
+2026-04-28 22:17:13 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:16 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:17 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:17 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:17 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:18 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:18 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:18 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:18 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-28 22:17:18 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-29 15:04:52 - LOGIN alice pass → SUCCESS 1
+2026-04-29 15:04:52 - BOOK 1 Hilton 2026-05-01 → SUCCESS Booking created
+2026-04-29 15:04:52 - GET_BOOKINGS 1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-29 15:04:52 - LOGIN wrong wrong → ERROR Invalid credentials
+2026-04-29 15:04:52 - REGISTER newuser pass123 → ERROR Username already exists
+2026-04-29 15:04:53 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:04:53 - SEARCH Астана → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:04:53 - HOTEL_DETAIL 1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:04:53 - MY_HOTELS 13 → 1|Hilton Astana|Астана|5|45000|ACTIVE
+2|Rixos Almaty|Алматы|5|60000|ACTIVE
+3|Marriott Nur-Sultan|Астана|4|55000|ACTIVE
+
+2026-04-29 15:43:01 - LOGIN|alice|pass → SUCCESS 1
+2026-04-29 15:43:01 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:43:01 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:43:24 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg
+2026-04-29 15:43:25 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 15:43:26 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:43:29 - GET_BOOKINGS|1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-29 15:43:34 - GET_BOOKINGS|1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-29 15:43:35 - MY_HOTELS|1 → EMPTY You haven't added any hotels yet
+2026-04-29 15:43:35 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 15:44:51 - REGISTER|Rina|pass → SUCCESS User registered
+2026-04-29 15:44:52 - LOGIN|Rina|pass → SUCCESS 24
+2026-04-29 15:44:52 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:44:52 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:44:57 - GET_BOOKINGS|24 → EMPTY No bookings found
+2026-04-29 15:45:19 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:24 - FILTER|0|1000000|1 → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:45:24 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:45:26 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:45:26 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:45:28 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:45:29 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:31 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:32 - FILTER|0|1000000|1 → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:45:32 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:45:38 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:45:38 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:45:39 - FILTER|0|1000000|1 → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:45:39 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:45:40 - FILTER|0|1000000|1 → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:45:40 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:45:41 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:45:41 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:45:44 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:44 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:45 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:45 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:45 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:46 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:45:49 - FILTER|0|1000000|1 → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-29 15:45:49 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:47:14 - SEARCH|Rixos Almaty → EMPTY No hotels found in Rixos Almaty
+2026-04-29 15:52:03 - LOGIN|alice|pass → SUCCESS 1
+2026-04-29 15:52:03 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.7|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|4.7|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:52:03 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:52:03 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:52:20 - SEARCH|Rixos Almaty → 2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+4|Rixos Almaty|Almaty|5|85000|4.7|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+
+2026-04-29 15:52:20 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 15:52:20 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 15:52:25 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.7|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 15:52:25 - GET_REVIEWS|4 → EMPTY No reviews yet
+2026-04-29 15:52:26 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 15:52:26 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 15:52:27 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.7|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 15:52:27 - GET_REVIEWS|4 → EMPTY No reviews yet
+2026-04-29 15:52:41 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 15:52:41 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 15:52:46 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.7|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 15:52:46 - GET_REVIEWS|4 → EMPTY No reviews yet
+2026-04-29 15:52:47 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 15:52:47 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 15:52:49 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.7|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 15:52:49 - GET_REVIEWS|4 → EMPTY No reviews yet
+2026-04-29 15:52:51 - GET_REVIEWS|4 → EMPTY No reviews yet
+2026-04-29 15:52:52 - GET_REVIEWS|4 → EMPTY No reviews yet
+2026-04-29 15:55:13 - LOGIN|alice|pass → SUCCESS 1
+2026-04-29 15:55:14 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:55:14 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:55:14 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:55:19 - HOTEL_DETAIL|6 → 6|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+2026-04-29 15:55:19 - GET_REVIEWS|6 → EMPTY No reviews yet
+2026-04-29 15:55:28 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+2026-04-29 15:55:28 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 15:55:35 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 15:55:36 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 15:55:51 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg
+2026-04-29 15:55:51 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 15:55:58 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:55:58 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:55:59 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 15:55:59 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 15:56:05 - HOTEL_DETAIL|6 → 6|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+2026-04-29 15:56:05 - GET_REVIEWS|6 → EMPTY No reviews yet
+2026-04-29 15:57:46 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:57:46 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:57:46 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:57:48 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:57:48 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:57:48 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:57:50 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:57:50 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:57:50 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:57:54 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:57:54 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:57:54 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:57:57 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:57:57 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:57:57 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:57:59 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:57:59 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:57:59 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:58:00 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+
+2026-04-29 15:58:00 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:58:00 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:58:03 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 15:58:04 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 15:58:05 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg
+2026-04-29 15:58:05 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 15:58:05 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 15:58:05 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 15:58:06 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+2026-04-29 15:58:06 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 15:58:06 - HOTEL_DETAIL|6 → 6|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+2026-04-29 15:58:06 - GET_REVIEWS|6 → EMPTY No reviews yet
+2026-04-29 15:58:08 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:58:08 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:58:09 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg
+2026-04-29 15:58:09 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 15:58:10 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 15:58:10 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 15:58:11 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 15:58:11 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 15:58:11 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 15:58:11 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 15:58:13 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+2026-04-29 15:58:13 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 15:58:13 - HOTEL_DETAIL|6 → 6|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+2026-04-29 15:58:13 - GET_REVIEWS|6 → EMPTY No reviews yet
+2026-04-29 15:58:14 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+2026-04-29 15:58:14 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 15:58:15 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 15:58:15 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 15:58:23 - GET_BOOKINGS|1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-29 15:58:35 - MY_HOTELS|1 → EMPTY You haven't added any hotels yet
+2026-04-29 15:58:36 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 16:01:45 - ADD_HOTEL|Rakhat Palace Hotel|Almaty|Kanysh Satpaev 29/6|4|66000|Hotel|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg|1 → SUCCESS Hotel added with ID: 7
+2026-04-29 16:01:45 - MY_HOTELS|1 → 7|Rakhat Palace Hotel|Almaty|4|66000|ACTIVE
+
+2026-04-29 16:01:45 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 16:01:45 - GET_HOTELS → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 16:01:45 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg
+2026-04-29 16:01:46 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 16:01:59 - HOTEL_DETAIL|7 → 7|Rakhat Palace Hotel|Almaty|Kanysh Satpaev 29/6|4|66000|0.0|Hotel|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+2026-04-29 16:01:59 - GET_REVIEWS|7 → EMPTY No reviews yet
+2026-04-29 18:16:50 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2026-04-29 18:16:50 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:16:58 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg
+2026-04-29 18:16:58 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 18:16:59 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg
+2026-04-29 18:16:59 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 18:17:10 - MY_HOTELS|1 → 7|Rakhat Palace Hotel|Almaty|4|66000|ACTIVE
+
+2026-04-29 18:17:10 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 18:17:43 - MY_HOTELS|1 → 7|Rakhat Palace Hotel|Almaty|4|66000|ACTIVE
+
+2026-04-29 18:17:43 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 18:17:44 - MY_HOTELS|1 → 7|Rakhat Palace Hotel|Almaty|4|66000|ACTIVE
+
+2026-04-29 18:17:44 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 18:17:44 - GET_BOOKINGS|1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-29 18:17:45 - MY_HOTELS|1 → 7|Rakhat Palace Hotel|Almaty|4|66000|ACTIVE
+
+2026-04-29 18:17:45 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 18:17:47 - GET_BOOKINGS|1 → Booking [userId=1, hotel=Rixos, date=2026-09-10]
+Booking [userId=1, hotel=Hilton, date=2026-08-15]
+Booking [userId=1, hotel=Almaty, date=2026-05-06]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Hilton, date=2026-05-01]
+Booking [userId=1, hotel=Almaty, date=2026-04-18]
+Booking [userId=1, hotel=Almaty, date=2026-03-02]
+Booking [userId=1, hotel=Qqqqq, date=2026-01-10]
+
+2026-04-29 18:45:52 - LOGIN|alice|pass → SUCCESS 1
+2026-04-29 18:45:53 - GET_HOTELS|rating → 5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 18:45:53 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true
+2026-04-29 18:45:53 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:46:17 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:46:17 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 18:46:27 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true
+2026-04-29 18:46:27 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:46:31 - GET_BOOKINGS|1 → EMPTY No bookings found
+2026-04-29 18:46:33 - MY_HOTELS|1 → 7|Rakhat Palace Hotel|Almaty|4|66000|ACTIVE
+
+2026-04-29 18:46:33 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 18:46:56 - SEARCH|Astana → 1|Hilton Astana|Астана|5|45000|0.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-29 18:46:56 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:46:56 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 18:47:06 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true
+2026-04-29 18:47:06 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:47:08 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|0.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:47:08 - GET_REVIEWS|1 → EMPTY No reviews yet
+2026-04-29 18:47:23 - ADD_REVIEW|1|1|0|5|good → SUCCESS Review added
+2026-04-29 18:47:23 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:47:23 - GET_REVIEWS|1 → 5★|good — alice|2026-04-29 18:47:23
+
+2026-04-29 18:47:50 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true
+2026-04-29 18:47:50 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:47:51 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:47:51 - GET_REVIEWS|1 → 5★|good — alice|2026-04-29 18:47:23
+
+2026-04-29 18:47:55 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 18:47:55 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:47:55 - GET_REVIEWS|1 → 5★|good — alice|2026-04-29 18:47:23
+
+2026-04-29 18:47:56 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 18:47:56 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:47:56 - GET_REVIEWS|1 → 5★|good — alice|2026-04-29 18:47:23
+
+2026-04-29 18:47:57 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|0.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 18:47:57 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:47:57 - GET_REVIEWS|1 → 5★|good — alice|2026-04-29 18:47:23
+
+2026-04-29 18:48:02 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|0.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:02 - GET_REVIEWS|2 → EMPTY No reviews yet
+2026-04-29 18:48:18 - ADD_REVIEW|2|1|0|4|goodd → SUCCESS Review added
+2026-04-29 18:48:18 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:18 - GET_REVIEWS|2 → 4★|goodd — alice|2026-04-29 18:48:18
+
+2026-04-29 18:48:26 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 18:48:26 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:26 - GET_REVIEWS|1 → 5★|good — alice|2026-04-29 18:47:23
+
+2026-04-29 18:48:30 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:30 - GET_REVIEWS|2 → 4★|goodd — alice|2026-04-29 18:48:18
+
+2026-04-29 18:48:33 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:33 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 18:48:36 - HOTEL_DETAIL|7 → 7|Rakhat Palace Hotel|Almaty|Kanysh Satpaev 29/6|4|66000|0.0|Hotel|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:36 - GET_REVIEWS|7 → EMPTY No reviews yet
+2026-04-29 18:48:38 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:38 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 18:48:39 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:39 - GET_REVIEWS|2 → 4★|goodd — alice|2026-04-29 18:48:18
+
+2026-04-29 18:48:40 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true
+2026-04-29 18:48:40 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:48:41 - HOTEL_DETAIL|6 → 6|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900|Hotel|Medeu|1.2|73|12|true|true|false|false|true
+2026-04-29 18:48:41 - GET_REVIEWS|6 → EMPTY No reviews yet
+2026-04-29 18:48:41 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true
+2026-04-29 18:48:41 - GET_REVIEWS|5 → 5★|Perfect for a business trip, quiet and professional service. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:48:42 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:42 - GET_REVIEWS|1 → 5★|good — alice|2026-04-29 18:47:23
+
+2026-04-29 18:48:42 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true
+2026-04-29 18:48:42 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:48:43 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:43 - GET_REVIEWS|2 → 4★|goodd — alice|2026-04-29 18:48:18
+
+2026-04-29 18:48:44 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:44 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 18:48:44 - HOTEL_DETAIL|7 → 7|Rakhat Palace Hotel|Almaty|Kanysh Satpaev 29/6|4|66000|0.0|Hotel|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:44 - GET_REVIEWS|7 → EMPTY No reviews yet
+2026-04-29 18:48:45 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:45 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 18:48:46 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true
+2026-04-29 18:48:46 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:48:46 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:46 - GET_REVIEWS|3 → EMPTY No reviews yet
+2026-04-29 18:48:47 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:48:47 - GET_REVIEWS|2 → 4★|goodd — alice|2026-04-29 18:48:18
+
+2026-04-29 18:48:48 - HOTEL_DETAIL|4 → 4|Rixos Almaty|Almaty|Seyfullin Avenue 506/99|5|85000|4.5|Luxury hotel in the center of Almaty with spa, breakfast, Wi-Fi and business facilities.|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900|Hotel|Bostandyk|0.8|95|8|true|true|true|true|true
+2026-04-29 18:48:48 - GET_REVIEWS|4 → 5★|Excellent location, clean rooms and very helpful staff. — demo_guest|2026-04-29 15:55:01
+4★|Great breakfast and spa. The room was comfortable. — demo_guest|2026-04-29 15:55:01
+
+2026-04-29 18:54:42 - LOGIN|bob|pass → SUCCESS 2
+2026-04-29 18:54:43 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 18:54:43 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true
+2026-04-29 18:54:43 - GET_REVIEWS|1 → 5★|good — alice|2026-04-29 18:47:23
+
+2026-04-29 18:54:49 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-29 18:54:51 - GET_WISHLIST|2 → EMPTY Wishlist is empty
+2026-04-29 18:54:57 - GET_PROFILE|2 → bob|||
+2026-04-29 18:54:59 - MY_HOTELS|2 → EMPTY You haven't added any hotels yet
+2026-04-29 18:54:59 - OWNER_BOOKINGS|2 → EMPTY No bookings
+2026-04-29 18:55:00 - GET_PROFILE|2 → bob|||
+2026-04-29 19:06:34 - LOGIN|bob|pass → SUCCESS 2
+2026-04-29 19:06:35 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 19:06:35 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-29 19:06:35 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-29 19:06:35 - RECENT_SEARCHES|2 → EMPTY No recent searches
+2026-04-29 19:06:35 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-29 19:07:00 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-29 19:07:00 - GET_REVIEWS|5|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-29 15:55:01
+
+2026-04-29 19:07:10 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-29 19:07:11 - GET_WISHLIST|2 → EMPTY Wishlist is empty
+2026-04-29 19:07:12 - GET_PROFILE|2 → bob|||
+2026-04-29 19:07:13 - MY_HOTELS|2 → EMPTY You haven't added any hotels yet
+2026-04-29 19:07:13 - OWNER_BOOKINGS|2 → EMPTY No bookings
+2026-04-29 19:22:19 - LOGIN|alice|pass → SUCCESS 1
+2026-04-29 19:22:20 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 19:22:20 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-29 19:22:20 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-29 19:22:20 - RECENT_SEARCHES|1 → EMPTY No recent searches
+2026-04-29 19:22:20 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-29 19:22:44 - GET_BOOKINGS|1 → Booking ID: 29
+Hotel: Hilton Astana
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+Booking ID: 30
+Hotel: Rixos Almaty
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+
+2026-04-29 19:22:54 - GET_WISHLIST|1 → EMPTY Wishlist is empty
+2026-04-29 19:23:06 - GET_PROFILE|1 → alice|||
+2026-04-29 19:23:18 - MY_HOTELS|1 → 7|Rakhat Palace Hotel|Almaty|4|66000|ACTIVE
+
+2026-04-29 19:23:18 - OWNER_BOOKINGS|1 → EMPTY No bookings
+2026-04-29 19:29:43 - LOGIN|bob|pass → SUCCESS 2
+2026-04-29 19:29:44 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 19:29:44 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-29 19:29:44 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-29 19:29:44 - RECENT_SEARCHES|2 → EMPTY No recent searches
+2026-04-29 19:29:44 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-29 19:30:14 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-29 19:30:15 - GET_WISHLIST|2 → EMPTY Wishlist is empty
+2026-04-29 19:30:16 - GET_PROFILE|2 → bob|||
+2026-04-29 19:30:16 - MY_HOTELS|2 → EMPTY You haven't added any hotels yet
+2026-04-29 19:30:16 - OWNER_BOOKINGS|2 → EMPTY No bookings
+2026-04-29 19:30:45 - LOGIN|alice|pass → SUCCESS 1
+2026-04-29 19:30:47 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-29 19:30:47 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-29 19:30:47 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-29 19:30:47 - RECENT_SEARCHES|1 → EMPTY No recent searches
+2026-04-29 19:30:47 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 08:27:09 - LOGIN|bob|alice → ERROR Invalid credentials
+2026-04-30 08:27:10 - LOGIN|bob|alice → ERROR Invalid credentials
+2026-04-30 08:27:17 - LOGIN|bob|pass → SUCCESS 2
+2026-04-30 08:27:19 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 08:27:19 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 08:27:19 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 08:27:19 - RECENT_SEARCHES|2 → EMPTY No recent searches
+2026-04-30 08:27:20 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
