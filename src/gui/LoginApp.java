@@ -26,6 +26,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -37,6 +38,7 @@ import javafx.stage.Stage;
 import network.SocketClient;
 
 public class LoginApp extends Application {
+    private static final String BOOKING_BLUE = "#003580";
     private static final String APP_BG = "-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);";
     private static final String PANEL_STYLE = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-border-color: rgba(255, 255, 255, 0.3); -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);";
     private static final String PRIMARY_BUTTON = "-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 24; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);";
@@ -207,7 +209,6 @@ public class LoginApp extends Application {
             showLoginScreen();
         });
 
-<<<<<<< Updated upstream
         Label userLabel = new Label("👤 User ID: " + currentUserId + " (Role: " + (currentUserRole == 0 ? "Guest" : currentUserRole == 1 ? "Owner" : "Admin") + ")");
         userLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 14px;");
         statusLabel = new Label("✅ Ready");
@@ -225,16 +226,6 @@ public class LoginApp extends Application {
         topPane.setLeft(topBar);
         topPane.setRight(topRight);
         topPane.setStyle("-fx-background-color: linear-gradient(to right, #667eea, #764ba2);");
-=======
-        Label userLabel = new Label("User ID: " + currentUserId);
-        userLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: white;");
-        statusLabel = new Label("Ready");
-        statusLabel.setStyle("-fx-text-fill: #d8e7ff;");
-        HBox topBar = new HBox(12, userLabel, statusLabel, logoutBtn);
-        topBar.setPadding(new Insets(10));
-        topBar.setAlignment(Pos.CENTER_LEFT);
-        topBar.setStyle("-fx-background-color: " + BOOKING_BLUE + "; -fx-border-color: #002b6f; -fx-border-width: 0 0 1 0;");
->>>>>>> Stashed changes
 
         BorderPane root = new BorderPane();
         root.setStyle(APP_BG);
@@ -244,6 +235,9 @@ public class LoginApp extends Application {
         primaryStage.setTitle("🏨 Booking System");
         primaryStage.setScene(new Scene(root, 1300, 900));
         loadHotels();
+        primaryStage.setScene(new Scene(root, 1400, 950)); // было 1300x900
+        primaryStage.setMinWidth(1400);
+        primaryStage.setMinHeight(900);
     }
 
     private Tab createSearchTab() {
@@ -264,9 +258,10 @@ public class LoginApp extends Application {
         recommendationsArea.setPrefHeight(90);
         styleArea(recommendationsArea);
         mapPane = new Pane();
-        mapPane.setPrefSize(520, 180);
-        mapPane.setStyle("-fx-background-color: #eef6ff; -fx-border-color: #b7cbe6; -fx-border-radius: 8; -fx-background-radius: 8;");
-
+mapPane.setPrefSize(280, 280);
+mapPane.setMinSize(280, 280);
+mapPane.setMaxSize(280, 280);
+mapPane.setStyle("-fx-background-color: #eef6ff; -fx-border-color: #b7cbe6; -fx-border-radius: 12; -fx-background-radius: 12;");
         searchField.textProperty().addListener((obs, oldValue, newValue) -> loadAutocomplete(newValue));
         suggestionsListView.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue != null) {
@@ -384,67 +379,104 @@ public class LoginApp extends Application {
         recommendBtn.setOnAction(e -> loadRecommendations());
         contactBtn.setOnAction(e -> contactSelectedHotel());
 
-        GridPane searchPanel = new GridPane();
-<<<<<<< Updated upstream
-        searchPanel.setHgap(10);
-        searchPanel.setVgap(10);
-        searchPanel.setPadding(new Insets(16));
-        searchPanel.setStyle(PANEL_STYLE + " -fx-padding: 16;");
-        searchPanel.setMaxWidth(1080);
-=======
-        searchPanel.setHgap(8);
-        searchPanel.setVgap(8);
-        searchPanel.setPadding(new Insets(12));
-        searchPanel.setStyle("-fx-background-color: " + BOOKING_YELLOW + "; -fx-border-color: #e1a900; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 14;");
->>>>>>> Stashed changes
-        searchPanel.add(new Label("Destination:"), 0, 0);
-        searchPanel.add(searchField, 1, 0, 4, 1);
-        Button refreshDiscoveryBtn = new Button("Discovery");
-        styleSecondary(refreshDiscoveryBtn);
-        refreshDiscoveryBtn.setOnAction(e -> loadDiscoveryPanels());
-        searchPanel.add(refreshDiscoveryBtn, 5, 0);
-        searchPanel.add(new Label("Check-in:"), 0, 1);
-        searchPanel.add(checkInPicker, 1, 1);
-        searchPanel.add(new Label("Check-out:"), 2, 1);
-        searchPanel.add(checkOutPicker, 3, 1);
-        searchPanel.add(new Label("Guests:"), 4, 1);
-        searchPanel.add(guestsSpinner, 5, 1);
-        searchPanel.add(new Label("Rooms:"), 0, 2);
-        searchPanel.add(roomsSpinner, 1, 2);
-        searchPanel.add(new Label("Trip:"), 2, 2);
-        searchPanel.add(tripTypeBox, 3, 2);
-        searchPanel.add(new Label("Min price:"), 0, 3);
-        searchPanel.add(minPriceSpinner, 1, 3);
-        searchPanel.add(new Label("Max price:"), 2, 3);
-        searchPanel.add(maxPriceSpinner, 3, 3);
-        searchPanel.add(new Label("Stars from:"), 4, 3);
-        searchPanel.add(starsSpinner, 5, 3);
-        searchPanel.add(new Label("Type:"), 0, 4);
-        searchPanel.add(propertyTypeBox, 1, 4);
-        searchPanel.add(new Label("District:"), 2, 4);
-        searchPanel.add(districtField, 3, 4);
-        searchPanel.add(new Label("Sort:"), 4, 4);
-        searchPanel.add(sortBox, 5, 4);
-        searchPanel.add(new HBox(8, wifiCheckBox, parkingCheckBox, poolCheckBox), 1, 5, 3, 1);
-        searchPanel.add(new HBox(8, breakfastCheckBox, freeCancellationCheckBox, availableOnlyCheckBox), 4, 5, 2, 1);
-        searchPanel.add(new Label("Guest:"), 0, 6);
-        searchPanel.add(guestNameField, 1, 6, 2, 1);
-        searchPanel.add(guestEmailField, 3, 6);
-        searchPanel.add(guestPhoneField, 4, 6);
-        searchPanel.add(new HBox(8, bookBtn, wishlistBtn), 5, 6);
-        searchPanel.add(new HBox(8, searchBtn, filterBtn, allBtn), 1, 7, 3, 1);
-        searchPanel.add(new HBox(8, prevPageBtn, nextPageBtn, recommendBtn, reviewsBtn), 1, 8, 4, 1);
-        searchPanel.add(new Label("Review:"), 0, 9);
-        searchPanel.add(reviewRatingSpinner, 1, 9);
-        searchPanel.add(new HBox(6, new Label("Clean"), reviewCleanlinessSpinner, new Label("Comfort"), reviewComfortSpinner, new Label("Staff"), reviewStaffSpinner), 2, 9, 3, 1);
-        searchPanel.add(addReviewBtn, 5, 9);
-        searchPanel.add(new Label("Comment:"), 0, 10);
-        searchPanel.add(reviewCommentField, 1, 10, 2, 1);
-        searchPanel.add(reviewPhotoField, 3, 10, 2, 1);
-        searchPanel.add(new HBox(6, new Label("Sort reviews"), reviewSortBox, new Label("Min"), reviewMinRatingSpinner), 5, 10);
-        searchPanel.add(new Label("Contact:"), 0, 11);
-        searchPanel.add(contactMessageField, 1, 11, 4, 1);
-        searchPanel.add(contactBtn, 5, 11);
+        // ЗАМЕНИТЕ весь GridPane searchPanel на этот:
+GridPane searchPanel = new GridPane();
+searchPanel.setHgap(10);
+searchPanel.setVgap(10);
+searchPanel.setPadding(new Insets(16));
+searchPanel.setStyle(PANEL_STYLE);
+searchPanel.setPrefWidth(1200); // Добавьте эту строку
+
+// Делаем колонки разумной ширины
+// Делаем колонки шире для удобства
+searchPanel.getColumnConstraints().addAll(
+    new ColumnConstraints(100), // labels (было 80)
+    new ColumnConstraints(200), // fields (было 150)
+    new ColumnConstraints(100), // labels (было 80)
+    new ColumnConstraints(200), // fields (было 150)
+    new ColumnConstraints(100), // labels (было 80)
+    new ColumnConstraints(180)  // fields (было 150)
+);
+
+// Добавляем элементы по порядку
+int row = 0;
+searchPanel.add(new Label("Destination:"), 0, row);
+searchField = new TextField();
+searchField.setPromptText("City, country, address or hotel");
+searchField.setPrefWidth(350);
+searchPanel.add(searchField, 1, row, 3, 1);
+Button refreshDiscoveryBtn = new Button("🔄 Discovery");
+styleSecondary(refreshDiscoveryBtn);
+searchPanel.add(refreshDiscoveryBtn, 4, row, 2, 1);
+row++;
+
+searchPanel.add(new Label("Check-in:"), 0, row);
+searchPanel.add(checkInPicker, 1, row);
+searchPanel.add(new Label("Check-out:"), 2, row);
+searchPanel.add(checkOutPicker, 3, row);
+searchPanel.add(new Label("Guests:"), 4, row);
+searchPanel.add(guestsSpinner, 5, row);
+row++;
+
+searchPanel.add(new Label("Rooms:"), 0, row);
+searchPanel.add(roomsSpinner, 1, row);
+searchPanel.add(new Label("Trip type:"), 2, row);
+searchPanel.add(tripTypeBox, 3, row);
+searchPanel.add(new Label("Stars from:"), 4, row);
+searchPanel.add(starsSpinner, 5, row);
+row++;
+
+searchPanel.add(new Label("Min price:"), 0, row);
+searchPanel.add(minPriceSpinner, 1, row);
+searchPanel.add(new Label("Max price:"), 2, row);
+searchPanel.add(maxPriceSpinner, 3, row);
+searchPanel.add(new Label("Sort by:"), 4, row);
+searchPanel.add(sortBox, 5, row);
+row++;
+
+searchPanel.add(new Label("Property:"), 0, row);
+searchPanel.add(propertyTypeBox, 1, row);
+searchPanel.add(new Label("District:"), 2, row);
+searchPanel.add(districtField, 3, row);
+row++;
+
+HBox amenitiesBox = new HBox(15, wifiCheckBox, parkingCheckBox, poolCheckBox, breakfastCheckBox, freeCancellationCheckBox);
+searchPanel.add(new Label("Amenities:"), 0, row);
+searchPanel.add(amenitiesBox, 1, row, 5, 1);
+row++;
+
+searchPanel.add(new Label("Guest info:"), 0, row);
+searchPanel.add(guestNameField, 1, row);
+searchPanel.add(guestEmailField, 2, row);
+searchPanel.add(guestPhoneField, 3, row);
+searchPanel.add(availableOnlyCheckBox, 4, row);
+row++;
+
+HBox actionButtons = new HBox(10, searchBtn, filterBtn, allBtn, bookBtn, wishlistBtn);
+actionButtons.setAlignment(Pos.CENTER_LEFT);
+searchPanel.add(actionButtons, 0, row, 6, 1);
+row++;
+
+searchPanel.add(new Label("Reviews:"), 0, row);
+HBox reviewBox = new HBox(10, reviewRatingSpinner, reviewCleanlinessSpinner, reviewComfortSpinner, reviewStaffSpinner, reviewSortBox, reviewMinRatingSpinner);
+searchPanel.add(reviewBox, 1, row, 5, 1);
+row++;
+
+searchPanel.add(new Label("Review text:"), 0, row);
+searchPanel.add(reviewCommentField, 1, row, 3, 1);
+searchPanel.add(addReviewBtn, 4, row, 2, 1);
+row++;
+
+searchPanel.add(new Label("Contact hotel:"), 0, row);
+searchPanel.add(contactMessageField, 1, row, 3, 1);
+searchPanel.add(contactBtn, 4, row, 2, 1);
+row++;
+
+// Делаем панель прокручиваемой
+ScrollPane searchScroll = new ScrollPane(searchPanel);
+searchScroll.setFitToWidth(true);
+searchScroll.setPrefViewportHeight(380);
+searchScroll.setStyle("-fx-background-color: transparent; -fx-background: transparent;");
 
         Label pageTitle = new Label("Find your next stay");
         pageTitle.setStyle("-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;");
@@ -501,16 +533,11 @@ public class LoginApp extends Application {
         detailsBox.setStyle(PANEL_STYLE);
         VBox.setVgrow(hotelDetailsArea, Priority.ALWAYS);
 
-        HBox content = new HBox(12, discoveryBox, hotelListView, detailsBox);
-        content.setPadding(new Insets(12));
-        HBox.setHgrow(detailsBox, Priority.ALWAYS);
+       HBox content = new HBox (12, discoveryBox, hotelListView, detailsBox);
+content.setPadding(new Insets(12));
+HBox.setHgrow(detailsBox, Priority.ALWAYS);
 
-        ScrollPane searchScroll = new ScrollPane(searchPanel);
-        searchScroll.setFitToWidth(true);
-        searchScroll.setPrefViewportHeight(260);
-        searchScroll.setStyle("-fx-background-color: transparent; -fx-background: transparent;");
-
-        VBox root = new VBox(hero, searchScroll, content);
+VBox root = new VBox(hero, searchScroll, content);   // searchScroll уже создан выше
         root.setStyle(APP_BG);
         VBox.setVgrow(content, Priority.ALWAYS);
 
@@ -1021,37 +1048,57 @@ public class LoginApp extends Application {
     }
 
     private void renderMap(List<HotelItem> hotels) {
-        if (mapPane == null) {
-            return;
-        }
-        mapPane.getChildren().clear();
-        Text title = new Text(12, 20, "Result map");
-        title.setFill(Color.web("#27527a"));
-        mapPane.getChildren().add(title);
-        if (hotels.isEmpty()) {
-            mapPane.getChildren().add(new Text(12, 55, "No hotels to show"));
-            return;
-        }
-        int index = 0;
-        for (HotelItem hotel : hotels) {
-            double x = 35 + (index % 4) * 115 + Math.min(40, hotel.rating * 6);
-            double y = 55 + (index / 4) * 55 + Math.min(20, hotel.stars * 3);
-            Circle marker = new Circle(x, y, 9, Color.web("#006ce4"));
-            marker.setStroke(Color.WHITE);
-            marker.setStrokeWidth(2);
-            Text label = new Text(x + 12, y + 4, hotel.name.length() > 16 ? hotel.name.substring(0, 16) : hotel.name);
-            marker.setOnMouseClicked(e -> {
-                hotelListView.getSelectionModel().select(hotel);
-                hotelListView.scrollTo(hotel);
-            });
-            label.setOnMouseClicked(e -> {
-                hotelListView.getSelectionModel().select(hotel);
-                hotelListView.scrollTo(hotel);
-            });
-            mapPane.getChildren().addAll(marker, label);
-            index++;
-        }
+    if (mapPane == null) return;
+    mapPane.getChildren().clear();
+    
+    // Заголовок карты
+    Text title = new Text(10, 25, "📍 Hotels on map");
+    title.setFill(Color.web("#003580"));
+    title.setStyle("-fx-font-weight: bold; -fx-font-size: 12px;");
+    mapPane.getChildren().add(title);
+    
+    if (hotels == null || hotels.isEmpty()) {
+        Text empty = new Text(10, 55, "No hotels to show");
+        empty.setFill(Color.web("#666"));
+        empty.setStyle("-fx-font-size: 11px;");
+        mapPane.getChildren().add(empty);
+        return;
     }
+    
+    // Ограничиваем количество маркеров (максимум 8)
+    int maxMarkers = Math.min(hotels.size(), 8);
+    for (int i = 0; i < maxMarkers; i++) {
+        HotelItem hotel = hotels.get(i);
+        
+        // Рассчитываем позицию (равномерно по карте)
+        int cols = 3;
+        int rowIdx = i / cols;
+        int colIdx = i % cols;
+        double x = 25 + colIdx * 85;
+        double y = 55 + rowIdx * 65;
+        
+        Circle marker = new Circle(x, y, 10);
+        marker.setFill(Color.web("#006ce4"));
+        marker.setStroke(Color.WHITE);
+        marker.setStrokeWidth(2);
+        marker.setStyle("-fx-cursor: hand;");
+        
+        String shortName = hotel.name.length() > 14 ? hotel.name.substring(0, 12) + ".." : hotel.name;
+        Text label = new Text(x + 12, y + 4, shortName);
+        label.setStyle("-fx-font-size: 9px; -fx-fill: #003580; -fx-cursor: hand;");
+        
+        marker.setOnMouseClicked(e -> {
+            hotelListView.getSelectionModel().select(hotel);
+            hotelListView.scrollTo(hotel);
+        });
+        label.setOnMouseClicked(e -> {
+            hotelListView.getSelectionModel().select(hotel);
+            hotelListView.scrollTo(hotel);
+        });
+        
+        mapPane.getChildren().addAll(marker, label);
+    }
+}
 
     private void loadReviewsForSelectedHotel() {
         if (selectedHotel == null) {
@@ -1319,8 +1366,8 @@ public class LoginApp extends Application {
 
     private HBox createHotelCard(HotelItem hotel) {
         ImageView thumb = new ImageView();
-        thumb.setFitWidth(118);
-        thumb.setFitHeight(92);
+        thumb.setFitWidth(70);
+thumb.setFitHeight(55);
         thumb.setPreserveRatio(false);
         thumb.setSmooth(true);
         if (hotel.imageUrl != null && !hotel.imageUrl.trim().isEmpty() && !hotel.imageUrl.equalsIgnoreCase("null")) {

@@ -1690,3 +1690,516 @@ Astana|1|5.0|90000
 Astana|1|5.0|90000
 Алматы|1|4.0|60000
 
+2026-04-30 09:48:05 - LOGIN|bob|pass → SUCCESS 2 0
+2026-04-30 09:48:06 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 09:48:06 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:48:06 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:48:06 - RECENT_SEARCHES|2 → EMPTY No recent searches
+2026-04-30 09:48:06 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 09:48:57 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-30 09:49:02 - GET_WISHLIST|2 → EMPTY Wishlist is empty
+2026-04-30 09:49:04 - GET_PROFILE|2 → bob|||
+2026-04-30 09:49:05 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-30 09:49:10 - GET_WISHLIST|2 → EMPTY Wishlist is empty
+2026-04-30 09:49:13 - GET_PROFILE|2 → bob|||
+2026-04-30 09:49:43 - AUTOCOMPLETE|Астана → Астана
+
+2026-04-30 09:49:43 - SEARCH|Астана → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-30 09:49:43 - SAVE_SEARCH|2|Астана → SUCCESS Search saved
+2026-04-30 09:49:43 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:49:43 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:49:43 - RECENT_SEARCHES|2 → Астана
+
+2026-04-30 09:49:44 - AUTOCOMPLETE|Astana → Hilton Astana
+Rixos President Astana
+Astana
+
+2026-04-30 09:49:44 - SEARCH|Astana → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 09:49:44 - SAVE_SEARCH|2|Astana → SUCCESS Search saved
+2026-04-30 09:49:44 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:49:44 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:49:44 - RECENT_SEARCHES|2 → Astana
+Астана
+
+2026-04-30 09:49:46 - AUTOCOMPLETE|Алматы → Алматы
+
+2026-04-30 09:49:46 - SEARCH|Алматы → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+
+2026-04-30 09:49:46 - SAVE_SEARCH|2|Алматы → SUCCESS Search saved
+2026-04-30 09:49:46 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:49:46 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 09:49:46 - RECENT_SEARCHES|2 → Алматы
+Astana
+Астана
+
+2026-04-30 09:50:23 - AUTOCOMPLETE|Astana → Hilton Astana
+Rixos President Astana
+Astana
+
+2026-04-30 09:50:23 - SEARCH|Astana → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 09:50:23 - SAVE_SEARCH|2|Astana → SUCCESS Search saved
+2026-04-30 09:50:23 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:24 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:50:24 - RECENT_SEARCHES|2 → Astana
+Алматы
+Астана
+
+2026-04-30 09:50:24 - AUTOCOMPLETE|Астана → Астана
+
+2026-04-30 09:50:24 - SEARCH|Астана → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-30 09:50:24 - SAVE_SEARCH|2|Астана → SUCCESS Search saved
+2026-04-30 09:50:24 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:24 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:50:24 - RECENT_SEARCHES|2 → Астана
+Astana
+Алматы
+
+2026-04-30 09:50:26 - AUTOCOMPLETE|Almaty → Rixos Almaty
+Almaty
+
+2026-04-30 09:50:26 - SEARCH|Almaty → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 09:50:26 - SAVE_SEARCH|2|Almaty → SUCCESS Search saved
+2026-04-30 09:50:26 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:26 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 09:50:26 - RECENT_SEARCHES|2 → Almaty
+Астана
+Astana
+Алматы
+
+2026-04-30 09:50:29 - AUTOCOMPLETE|Алматы → Алматы
+
+2026-04-30 09:50:29 - SEARCH|Алматы → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+
+2026-04-30 09:50:29 - SAVE_SEARCH|2|Алматы → SUCCESS Search saved
+2026-04-30 09:50:29 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:29 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 09:50:29 - RECENT_SEARCHES|2 → Алматы
+Almaty
+Астана
+Astana
+
+2026-04-30 09:50:32 - AUTOCOMPLETE|Astana → Hilton Astana
+Rixos President Astana
+Astana
+
+2026-04-30 09:50:32 - SEARCH|Astana → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 09:50:32 - SAVE_SEARCH|2|Astana → SUCCESS Search saved
+2026-04-30 09:50:32 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:32 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:50:32 - RECENT_SEARCHES|2 → Astana
+Алматы
+Almaty
+Астана
+
+2026-04-30 09:50:33 - AUTOCOMPLETE|Алматы → Алматы
+
+2026-04-30 09:50:33 - SEARCH|Алматы → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+
+2026-04-30 09:50:33 - SAVE_SEARCH|2|Алматы → SUCCESS Search saved
+2026-04-30 09:50:33 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:33 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 09:50:33 - RECENT_SEARCHES|2 → Алматы
+Astana
+Almaty
+Астана
+
+2026-04-30 09:50:35 - AUTOCOMPLETE|Astana → Hilton Astana
+Rixos President Astana
+Astana
+
+2026-04-30 09:50:35 - SEARCH|Astana → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 09:50:35 - SAVE_SEARCH|2|Astana → SUCCESS Search saved
+2026-04-30 09:50:35 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:35 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:50:35 - RECENT_SEARCHES|2 → Astana
+Алматы
+Almaty
+Астана
+
+2026-04-30 09:50:36 - AUTOCOMPLETE|Астана → Астана
+
+2026-04-30 09:50:36 - SEARCH|Астана → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-30 09:50:36 - SAVE_SEARCH|2|Астана → SUCCESS Search saved
+2026-04-30 09:50:36 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:36 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:50:36 - RECENT_SEARCHES|2 → Астана
+Astana
+Алматы
+Almaty
+
+2026-04-30 09:50:37 - AUTOCOMPLETE|Almaty → Rixos Almaty
+Almaty
+
+2026-04-30 09:50:38 - SEARCH|Almaty → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 09:50:38 - SAVE_SEARCH|2|Almaty → SUCCESS Search saved
+2026-04-30 09:50:38 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:38 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 09:50:38 - RECENT_SEARCHES|2 → Almaty
+Астана
+Astana
+Алматы
+
+2026-04-30 09:50:40 - AUTOCOMPLETE|Астана → Астана
+
+2026-04-30 09:50:40 - SEARCH|Астана → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-30 09:50:40 - SAVE_SEARCH|2|Астана → SUCCESS Search saved
+2026-04-30 09:50:40 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:40 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:50:40 - RECENT_SEARCHES|2 → Астана
+Almaty
+Astana
+Алматы
+
+2026-04-30 09:50:44 - AUTOCOMPLETE|Almaty → Rixos Almaty
+Almaty
+
+2026-04-30 09:50:44 - SEARCH|Almaty → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 09:50:44 - SAVE_SEARCH|2|Almaty → SUCCESS Search saved
+2026-04-30 09:50:44 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:50:44 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 09:50:44 - RECENT_SEARCHES|2 → Almaty
+Астана
+Astana
+Алматы
+
+2026-04-30 09:50:49 - RECENT_SEARCHES|2 → Almaty
+Астана
+Astana
+Алматы
+
+2026-04-30 09:50:49 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 09:50:49 - RECENT_SEARCHES|2 → Almaty
+Астана
+Astana
+Алматы
+
+2026-04-30 09:50:49 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 09:51:22 - ADD_WISHLIST|2|2|Favorites → SUCCESS Added to wishlist
+2026-04-30 09:51:22 - GET_WISHLIST|2 → 2|Favorites|Rixos Almaty|Алматы|5|60000|4.0
+
+2026-04-30 09:51:22 - ADD_WISHLIST|2|2|Favorites → SUCCESS Added to wishlist
+2026-04-30 09:51:22 - GET_WISHLIST|2 → 2|Favorites|Rixos Almaty|Алматы|5|60000|4.0
+
+2026-04-30 09:51:23 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-30 09:51:28 - GET_WISHLIST|2 → 2|Favorites|Rixos Almaty|Алматы|5|60000|4.0
+
+2026-04-30 09:51:31 - GET_WISHLIST|2 → 2|Favorites|Rixos Almaty|Алматы|5|60000|4.0
+
+2026-04-30 09:51:32 - ADD_WISHLIST|2|2|Favorites → SUCCESS Added to wishlist
+2026-04-30 09:51:32 - GET_WISHLIST|2 → 2|Favorites|Rixos Almaty|Алматы|5|60000|4.0
+
+2026-04-30 09:51:34 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-30 09:51:41 - AUTOCOMPLETE|Астана → Астана
+
+2026-04-30 09:51:41 - SEARCH|Астана → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+
+2026-04-30 09:51:41 - SAVE_SEARCH|2|Астана → SUCCESS Search saved
+2026-04-30 09:51:41 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:51:41 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 09:51:41 - RECENT_SEARCHES|2 → Астана
+Almaty
+Astana
+Алматы
+
+2026-04-30 09:51:43 - AUTOCOMPLETE|Almaty → Rixos Almaty
+Almaty
+
+2026-04-30 09:51:43 - SEARCH|Almaty → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 09:51:43 - SAVE_SEARCH|2|Almaty → SUCCESS Search saved
+2026-04-30 09:51:43 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 09:51:43 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 09:51:43 - RECENT_SEARCHES|2 → Almaty
+Астана
+Astana
+Алматы
+
+2026-04-30 10:44:51 - LOGIN|alice|pass → SUCCESS 1 0
+2026-04-30 10:44:52 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 10:44:52 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 10:44:52 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 10:44:52 - RECENT_SEARCHES|1 → EMPTY No recent searches
+2026-04-30 10:44:52 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 10:45:18 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 10:45:18 - GET_REVIEWS|5|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-29 15:55:01
+
+2026-04-30 10:45:20 - HOTEL_DETAIL|3 → 3|Marriott Nur-Sultan|Астана|пр. Туран, 15|4|55000|0.0|Бизнес-отель рядом с выставочным центром|marriott.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 10:45:20 - GET_REVIEWS|3|date|1 → EMPTY No reviews yet
+2026-04-30 10:45:22 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 10:45:23 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 10:45:25 - HOTEL_DETAIL|6 → 6|Kazakhstan Hotel|Almaty|Dostyk Avenue 52/2|4|45000|4.7|Classic city hotel close to restaurants, parks and popular attractions.|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900|Hotel|Medeu|1.2|73|12|true|true|false|false|true|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900,https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=900|Check-in: 14:00; Check-out: 12:00; Free cancellation before arrival day.|Economy Room - 45000 KZT - city view; Standard Room - 55000 KZT - breakfast optional; Family Room - 72000 KZT - two beds|kazakhstan.hotel@example.com
+2026-04-30 10:45:25 - GET_REVIEWS|6|date|1 → EMPTY No reviews yet
+2026-04-30 10:45:27 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 10:45:27 - GET_REVIEWS|5|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-29 15:55:01
+
+2026-04-30 10:45:29 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 10:45:29 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 10:45:31 - HOTEL_DETAIL|7 → 7|Rakhat Palace Hotel|Almaty|Kanysh Satpaev 29/6|4|66000|0.0|Hotel|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 10:45:31 - GET_REVIEWS|7|date|1 → EMPTY No reviews yet
+2026-04-30 10:45:39 - GET_BOOKINGS|1 → Booking ID: 29
+Hotel: Hilton Astana
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+Booking ID: 30
+Hotel: Rixos Almaty
+Dates: 2026-05-01
+Guests: 1, rooms: 1
+Guest: 
+Contact:  / 
+Status: CONFIRMED
+
+
+2026-04-30 10:45:43 - GET_WISHLIST|1 → EMPTY Wishlist is empty
+2026-04-30 10:45:46 - GET_PROFILE|1 → alice|||
+2026-04-30 11:41:16 - LOGIN|bob|pass → SUCCESS 2 0
+2026-04-30 11:41:18 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 11:41:18 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:41:18 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 11:41:18 - RECENT_SEARCHES|2 → Almaty
+Астана
+Astana
+Алматы
+
+2026-04-30 11:41:18 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 11:43:11 - GET_PROFILE|2 → bob|||
+2026-04-30 11:43:52 - UPDATE_PROFILE|2|bob|bobyyy@gmail.com|+8983120215422 → SUCCESS Profile updated
+2026-04-30 11:43:55 - GET_PROFILE|2 → bob|bob|bobyyy@gmail.com|+8983120215422
+2026-04-30 11:43:58 - GET_WISHLIST|2 → 2|Favorites|Rixos Almaty|Алматы|5|60000|4.0
+
+2026-04-30 11:44:16 - GET_WISHLIST|2 → 2|Favorites|Rixos Almaty|Алматы|5|60000|4.0
+
+2026-04-30 11:44:23 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-30 11:44:31 - HOTEL_DETAIL|5 → 5|Rixos President Astana|Astana|D. Kunayev Street 7|5|90000|5.0|Premium hotel for business and leisure guests near government and business districts.|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900|Hotel|Left Bank|1.5|88|6|true|true|false|true|true|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900,https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900|Check-in: 15:00; Check-out: 12:00; Free cancellation for flexible rates; Pets on request.|Business Room - 90000 KZT - work desk; Premium Room - 130000 KZT - breakfast and parking; Presidential Suite - 250000 KZT - VIP service|rixos.astana@example.com
+2026-04-30 11:44:31 - GET_REVIEWS|5|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|Perfect for a business trip, quiet and professional service. - demo_guest||2026-04-29 15:55:01
+
+2026-04-30 11:44:58 - SEARCH|Astana → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+
+2026-04-30 11:44:58 - SAVE_SEARCH|2|Astana → SUCCESS Search saved
+2026-04-30 11:44:58 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:44:58 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 11:44:58 - RECENT_SEARCHES|2 → Astana
+Almaty
+Астана
+Алматы
+
+2026-04-30 11:45:10 - SEARCH|Алматы → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+
+2026-04-30 11:45:10 - SAVE_SEARCH|2|Алматы → SUCCESS Search saved
+2026-04-30 11:45:10 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:45:11 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 11:45:11 - RECENT_SEARCHES|2 → Алматы
+Astana
+Almaty
+Астана
+
+2026-04-30 11:45:18 - GET_PROFILE|2 → bob|bob|bobyyy@gmail.com|+8983120215422
+2026-04-30 11:46:15 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-30 11:46:18 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-30 11:46:18 - GET_BOOKINGS|2 → EMPTY No bookings found
+2026-04-30 11:46:25 - SEARCH|Алматы → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+
+2026-04-30 11:46:25 - SAVE_SEARCH|2|Алматы → SUCCESS Search saved
+2026-04-30 11:46:25 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:46:25 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 11:46:25 - RECENT_SEARCHES|2 → Алматы
+Astana
+Almaty
+Астана
+
+2026-04-30 11:46:26 - SEARCH|Алматы → 2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+
+2026-04-30 11:46:26 - SAVE_SEARCH|2|Алматы → SUCCESS Search saved
+2026-04-30 11:46:26 - HOTEL_DETAIL|2 → 2|Rixos Almaty|Алматы|ул. Сатпаева, 53|5|60000|4.0|Элитный отель у подножия гор Алатау|rixos.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:46:26 - GET_REVIEWS|2|date|1 → 4*|Cleanliness 5, Comfort 5, Staff 5|goodd - alice||2026-04-29 18:48:18
+
+2026-04-30 11:46:26 - RECENT_SEARCHES|2 → Алматы
+Astana
+Almaty
+Астана
+
+2026-04-30 11:46:32 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 11:46:32 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:46:32 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 11:46:32 - RECENT_SEARCHES|2 → Алматы
+Astana
+Almaty
+Астана
+
+2026-04-30 11:46:32 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 11:46:32 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 11:46:32 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:46:32 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 11:46:32 - RECENT_SEARCHES|2 → Алматы
+Astana
+Almaty
+Астана
+
+2026-04-30 11:46:32 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 11:46:33 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 11:46:33 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:46:33 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 11:46:33 - RECENT_SEARCHES|2 → Алматы
+Astana
+Almaty
+Астана
+
+2026-04-30 11:46:33 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
+2026-04-30 11:46:33 - GET_HOTELS|rating → 1|Hilton Astana|Астана|5|45000|5.0|hilton.jpg
+5|Rixos President Astana|Astana|5|90000|5.0|https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900
+6|Kazakhstan Hotel|Almaty|4|45000|4.7|https://images.unsplash.com/photo-1455587734955-081b22074882?w=900
+4|Rixos Almaty|Almaty|5|85000|4.5|https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900
+2|Rixos Almaty|Алматы|5|60000|4.0|rixos.jpg
+3|Marriott Nur-Sultan|Астана|4|55000|0.0|marriott.jpg
+7|Rakhat Palace Hotel|Almaty|4|66000|0.0|https://rahatpalace.com/assets/images/otel/img_4855(1).jpg
+
+2026-04-30 11:46:33 - HOTEL_DETAIL|1 → 1|Hilton Astana|Астана|пр. Достык, 123|5|45000|5.0|Роскошный отель в центре Астаны с видом на Байтерек|hilton.jpg|Hotel||1.0|0|5|true|false|false|false|true||||hotel@example.com
+2026-04-30 11:46:33 - GET_REVIEWS|1|date|1 → 5*|Cleanliness 5, Comfort 5, Staff 5|good - alice||2026-04-29 18:47:23
+
+2026-04-30 11:46:33 - RECENT_SEARCHES|2 → Алматы
+Astana
+Almaty
+Астана
+
+2026-04-30 11:46:33 - POPULAR_DESTINATIONS → Almaty|3|3.06667|45000
+Астана|2|2.5|45000
+Astana|1|5.0|90000
+Алматы|1|4.0|60000
+
