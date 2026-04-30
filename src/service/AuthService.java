@@ -6,7 +6,7 @@ import exception.DatabaseException;
 import interfaces.IAuthService;
 
 
-public class AuthService implements IAuthService {  // ← implements
+public class AuthService implements IAuthService {  
     private DatabaseRepository repo;
 
     public AuthService(DatabaseRepository repo) {
@@ -31,7 +31,7 @@ public class AuthService implements IAuthService {  // ← implements
             validateCredentials(username, password);
             validatePassword(password);
             
-            boolean success = repo.register(username, password, 0); // Default role: guest
+            boolean success = repo.register(username, password, 0); 
             if (success) {
                 return "SUCCESS User registered";
             }

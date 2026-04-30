@@ -30,7 +30,7 @@ public class BookingServer {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("📡 New client connected: " + clientSocket.getInetAddress());
 
-                // ✅ 8. THREADS - каждый клиент в отдельном потоке
+                
                 new Thread(() -> handleClient(clientSocket, handler)).start();
             }
         } catch (IOException e) {

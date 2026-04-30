@@ -21,8 +21,12 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.Cursor;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.TilePane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -32,21 +36,22 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import network.SocketClient;
 
 public class LoginApp extends Application {
     private static final String APP_BG = "-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);";
     private static final String PANEL_STYLE = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-border-color: rgba(255, 255, 255, 0.3); -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);";
-    private static final String PRIMARY_BUTTON = "-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 24; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);";
-    private static final String SECONDARY_BUTTON = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-text-fill: #2f3e55; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 10 20; -fx-border-color: rgba(102, 126, 234, 0.3); -fx-border-radius: 25; -fx-border-width: 1;";
-    private static final String DANGER_BUTTON = "-fx-background-color: linear-gradient(to right, #ff6b6b, #ee5a52); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 10 20;";
+    private static final String PRIMARY_BUTTON = "-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 14 24; -fx-font-size: 15px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.22), 5, 0, 0, 2); -fx-cursor: hand;";
+    private static final String SECONDARY_BUTTON = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-text-fill: #2f3e55; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 22; -fx-font-size: 14px; -fx-border-color: rgba(102, 126, 234, 0.35); -fx-border-radius: 25; -fx-border-width: 1; -fx-cursor: hand;";
+    private static final String DANGER_BUTTON = "-fx-background-color: linear-gradient(to right, #ff6b6b, #ee5a52); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 22; -fx-font-size: 14px; -fx-cursor: hand;";
     private static final String INPUT_STYLE = "-fx-background-color: rgba(255, 255, 255, 0.9); -fx-border-color: rgba(255, 255, 255, 0.5); -fx-border-radius: 25; -fx-background-radius: 25; -fx-padding: 10 15; -fx-font-size: 14px; -fx-prompt-text-fill: #999;";
     private static final String TEXT_MUTED = "-fx-text-fill: #666666;";
 
     private Stage primaryStage;
     private int currentUserId = -1;
-    private int currentUserRole = 0; // 0 - guest, 1 - owner, 2 - admin
+    private int currentUserRole = 0; 
     private ListView<HotelItem> hotelListView;
     private TextArea hotelDetailsArea;
     private ImageView hotelImageView;
@@ -112,11 +117,11 @@ public class LoginApp extends Application {
         mainContainer.setAlignment(Pos.CENTER);
         mainContainer.setStyle(APP_BG);
 
-        // Иконка или заголовок
+        
         Label titleLabel = new Label("🏨 Booking System");
         titleLabel.setStyle("-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);");
 
-        // Панель логина
+        
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(30));
         grid.setHgap(15);
@@ -152,7 +157,7 @@ public class LoginApp extends Application {
             if (response.startsWith("SUCCESS")) {
                 String[] parts = response.split(" ");
                 currentUserId = Integer.parseInt(parts[1]);
-                currentUserRole = Integer.parseInt(parts[2]); // Сервер должен вернуть роль
+                currentUserRole = Integer.parseInt(parts[2]); 
                 showMainScreen();
             } else {
                 messageLabel.setText("❌ " + response);
@@ -188,14 +193,14 @@ public class LoginApp extends Application {
         tabs.getTabs().add(createBookingsTab());
         tabs.getTabs().add(createWishlistTab());
         tabs.getTabs().add(createProfileTab());
-        if (currentUserRole >= 1) { // Owner or Admin
+        if (currentUserRole >= 1) { 
             tabs.getTabs().add(createOwnerTab());
         }
-        if (currentUserRole == 2) { // Admin only
+        if (currentUserRole == 2) { 
             tabs.getTabs().add(createAdminTab());
         }
 
-        // Стиль для вкладок
+        
         tabs.setStyle("-fx-tab-min-width: 120px; -fx-tab-max-width: 120px; -fx-tab-min-height: 40px;");
 
         Button logoutBtn = new Button("🚪 Logout");
@@ -251,9 +256,13 @@ public class LoginApp extends Application {
         recommendationsArea.setEditable(false);
         recommendationsArea.setPrefHeight(90);
         styleArea(recommendationsArea);
-        mapPane = new Pane();
-        mapPane.setPrefSize(520, 180);
-        mapPane.setStyle("-fx-background-color: #eef6ff; -fx-border-color: #b7cbe6; -fx-border-radius: 8; -fx-background-radius: 8;");
+        mapPane = new VBox(10);
+        mapPane.setPrefSize(360, 260);
+        mapPane.setMaxWidth(360);
+        mapPane.setMinWidth(360);
+        mapPane.setMinHeight(260);
+        mapPane.setPadding(new Insets(14));
+        mapPane.setStyle("-fx-background-color: #eef6ff; -fx-border-color: #b7cbe6; -fx-border-radius: 14; -fx-background-radius: 14; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 4);");
 
         searchField.textProperty().addListener((obs, oldValue, newValue) -> loadAutocomplete(newValue));
         suggestionsListView.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
@@ -321,19 +330,29 @@ public class LoginApp extends Application {
         freeCancellationCheckBox = new CheckBox("Free cancellation");
         availableOnlyCheckBox = new CheckBox("Available rooms");
 
-        Button searchBtn = new Button("Search");
-        Button filterBtn = new Button("Apply filters");
-        Button allBtn = new Button("All hotels");
-        Button bookBtn = new Button("Book selected");
-        Button wishlistBtn = new Button("Save to wishlist");
-        Button prevPageBtn = new Button("Prev");
-        Button nextPageBtn = new Button("Next");
-        Button recommendBtn = new Button("For you");
-        Button contactBtn = new Button("Contact hotel");
-        Button reviewsBtn = new Button("Load reviews");
+        Button searchBtn = new Button("🔍 Search");
+        Button filterBtn = new Button("⚡ Apply filters");
+        Button allBtn = new Button("🏨 Show all hotels");
+        Button bookBtn = new Button("✅ Book");
+        Button wishlistBtn = new Button("💾 Wishlist");
+        Button prevPageBtn = new Button("◀ Prev");
+        Button nextPageBtn = new Button("Next ▶");
+        Button recommendBtn = new Button("✨ Recommended");
+        Button contactBtn = new Button("💬 Contact");
+        Button reviewsBtn = new Button("⭐ Reviews");
         stylePrimary(searchBtn);
         styleSecondary(filterBtn, allBtn, wishlistBtn, prevPageBtn, nextPageBtn, recommendBtn, reviewsBtn, contactBtn);
         stylePrimary(bookBtn);
+        searchBtn.setTooltip(new Tooltip("Search hotels by city, district, stars and price."));
+        filterBtn.setTooltip(new Tooltip("Apply current filter settings to the hotel list."));
+        allBtn.setTooltip(new Tooltip("Clear filters and show all hotels."));
+        bookBtn.setTooltip(new Tooltip("Book the selected hotel using the entered guest details."));
+        wishlistBtn.setTooltip(new Tooltip("Save the selected hotel to your wishlist."));
+        prevPageBtn.setTooltip(new Tooltip("Show previous page of hotels."));
+        nextPageBtn.setTooltip(new Tooltip("Show next page of hotels."));
+        recommendBtn.setTooltip(new Tooltip("Display hotel recommendations for you."));
+        contactBtn.setTooltip(new Tooltip("Send a message to the selected hotel."));
+        reviewsBtn.setTooltip(new Tooltip("Load reviews for the selected hotel."));
         contactMessageField = new TextField();
         contactMessageField.setPromptText("Message to hotel");
         styleInput(contactMessageField);
@@ -409,23 +428,43 @@ public class LoginApp extends Application {
         searchPanel.add(new HBox(8, wifiCheckBox, parkingCheckBox, poolCheckBox), 1, 5, 3, 1);
         searchPanel.add(new HBox(8, breakfastCheckBox, freeCancellationCheckBox, availableOnlyCheckBox), 4, 5, 2, 1);
         searchPanel.add(new Label("Guest:"), 0, 6);
-        searchPanel.add(guestNameField, 1, 6, 2, 1);
-        searchPanel.add(guestEmailField, 3, 6);
-        searchPanel.add(guestPhoneField, 4, 6);
-        searchPanel.add(new HBox(8, bookBtn, wishlistBtn), 5, 6);
-        searchPanel.add(new HBox(8, searchBtn, filterBtn, allBtn), 1, 7, 3, 1);
-        searchPanel.add(new HBox(8, prevPageBtn, nextPageBtn, recommendBtn, reviewsBtn), 1, 8, 4, 1);
-        searchPanel.add(new Label("Review:"), 0, 9);
-        searchPanel.add(reviewRatingSpinner, 1, 9);
-        searchPanel.add(new HBox(6, new Label("Clean"), reviewCleanlinessSpinner, new Label("Comfort"), reviewComfortSpinner, new Label("Staff"), reviewStaffSpinner), 2, 9, 3, 1);
-        searchPanel.add(addReviewBtn, 5, 9);
-        searchPanel.add(new Label("Comment:"), 0, 10);
-        searchPanel.add(reviewCommentField, 1, 10, 2, 1);
-        searchPanel.add(reviewPhotoField, 3, 10, 2, 1);
-        searchPanel.add(new HBox(6, new Label("Sort reviews"), reviewSortBox, new Label("Min"), reviewMinRatingSpinner), 5, 10);
-        searchPanel.add(new Label("Contact:"), 0, 11);
-        searchPanel.add(contactMessageField, 1, 11, 4, 1);
-        searchPanel.add(contactBtn, 5, 11);
+        HBox guestRow = new HBox(12, guestNameField, guestEmailField, guestPhoneField);
+        guestRow.setAlignment(Pos.CENTER_LEFT);
+        searchPanel.add(guestRow, 1, 6, 5, 1);
+
+        HBox searchControls = new HBox(12, searchBtn, filterBtn, allBtn);
+        searchControls.setAlignment(Pos.CENTER_LEFT);
+        searchPanel.add(searchControls, 1, 7, 5, 1);
+
+        HBox bookingControls = new HBox(12, bookBtn, wishlistBtn, recommendBtn, reviewsBtn);
+        bookingControls.setAlignment(Pos.CENTER_LEFT);
+        searchPanel.add(bookingControls, 1, 8, 5, 1);
+
+        HBox pageControls = new HBox(12, prevPageBtn, nextPageBtn);
+        pageControls.setAlignment(Pos.CENTER_LEFT);
+        searchPanel.add(pageControls, 1, 9, 5, 1);
+
+        searchPanel.add(new Label("Review:"), 0, 10);
+        HBox reviewRow = new HBox(10,
+                reviewRatingSpinner,
+                new Label("Clean"), reviewCleanlinessSpinner,
+                new Label("Comfort"), reviewComfortSpinner,
+                new Label("Staff"), reviewStaffSpinner,
+                addReviewBtn);
+        reviewRow.setAlignment(Pos.CENTER_LEFT);
+        searchPanel.add(reviewRow, 1, 10, 5, 1);
+
+        searchPanel.add(new Label("Comment:"), 0, 11);
+        searchPanel.add(reviewCommentField, 1, 11, 2, 1);
+        searchPanel.add(reviewPhotoField, 3, 11, 2, 1);
+
+        HBox reviewControlRow = new HBox(10, new Label("Sort reviews"), reviewSortBox, new Label("Min"), reviewMinRatingSpinner);
+        reviewControlRow.setAlignment(Pos.CENTER_LEFT);
+        searchPanel.add(reviewControlRow, 1, 12, 4, 1);
+
+        searchPanel.add(new Label("Message:"), 0, 13);
+        searchPanel.add(contactMessageField, 1, 13, 4, 1);
+        searchPanel.add(contactBtn, 5, 13);
 
         hotelListView = new ListView<>();
         hotelListView.setPrefWidth(420);
@@ -446,14 +485,15 @@ public class LoginApp extends Application {
         hotelDetailsArea.setWrapText(true);
         styleArea(hotelDetailsArea);
 
-        VBox discoveryBox = new VBox(8,
+        VBox discoveryBox = new VBox(12,
                 new Label("Suggestions"), suggestionsListView,
                 new Label("Recent searches"), recentSearchesListView,
                 new Label("Popular destinations"), popularDestinationsListView,
                 new Label("For you"), recommendationsArea,
                 new Label("Map"), mapPane);
-        discoveryBox.setPrefWidth(240);
-        discoveryBox.setPadding(new Insets(10));
+        discoveryBox.setPrefWidth(380);
+        discoveryBox.setMaxWidth(380);
+        discoveryBox.setPadding(new Insets(14));
         discoveryBox.setStyle(PANEL_STYLE);
 
         VBox detailsBox = new VBox(10, hotelImageView, hotelDetailsArea);
@@ -766,7 +806,7 @@ public class LoginApp extends Application {
         Button refreshBtn = new Button("📊 Refresh admin data");
         stylePrimary(refreshBtn);
         refreshBtn.setOnAction(e -> {
-            // Load users, hotels, stats
+            
             String users = send("GET_ALL_USERS");
             usersArea.setText(users);
             String hotels = send("GET_ALL_HOTELS");
@@ -892,9 +932,15 @@ public class LoginApp extends Application {
         String[] parts = response.split("\\|", -1);
         if (parts.length >= 8) {
             String imageUrl = parts.length >= 9 ? parts[8] : "";
+            String gallery = parts.length >= 20 ? parts[19] : "";
+            if (imageUrl == null || imageUrl.trim().isEmpty() || imageUrl.equalsIgnoreCase("null")) {
+                String[] galleryUrls = gallery.split(",");
+                if (galleryUrls.length > 0 && galleryUrls[0].trim().length() > 0) {
+                    imageUrl = galleryUrls[0].trim();
+                }
+            }
             showHotelImage(imageUrl);
             String reviews = getFilteredReviews(hotel.id);
-            String gallery = parts.length >= 20 ? parts[19] : "";
             String policies = parts.length >= 21 ? parts[20] : "";
             String rooms = parts.length >= 22 ? parts[21] : "";
             String contact = parts.length >= 23 ? parts[22] : "";
@@ -918,26 +964,20 @@ public class LoginApp extends Application {
                     extras +
                     "Gallery:\n" + gallery.replace(",", "\n") + "\n\n" +
                     "Policies:\n" + policies + "\n\n" +
-                    "Available rooms:\n" + rooms.replace(";", "\n") + "\n\n" +
-                    "Contact: " + contact + "\n\n" +
-                    "Description:\n" + parts[7] + "\n\n" +
-                    "Reviews:\n" + reviews + "\n\n" +
-                    "Choose dates and press Book selected to create a reservation.");
-        } else {
-            hotelImageView.setImage(null);
-            hotelDetailsArea.setText(response);
+                    "Available rooms:\n" + rooms.replace(";", "\n") + "\n\n");
         }
     }
 
     private void showHotelImage(String imageUrl) {
+        String placeholder = "https://via.placeholder.com/520x260/edf2ff/6c7ef8?text=No+photo+available";
         if (imageUrl == null || imageUrl.trim().isEmpty() || imageUrl.equalsIgnoreCase("null")) {
-            hotelImageView.setImage(null);
+            hotelImageView.setImage(new Image(placeholder, true));
             return;
         }
         try {
             hotelImageView.setImage(new Image(imageUrl, true));
         } catch (IllegalArgumentException ex) {
-            hotelImageView.setImage(null);
+            hotelImageView.setImage(new Image(placeholder, true));
             setStatus("Could not load hotel image");
         }
     }
@@ -984,32 +1024,55 @@ public class LoginApp extends Application {
             return;
         }
         mapPane.getChildren().clear();
-        Text title = new Text(12, 20, "Result map");
-        title.setFill(Color.web("#27527a"));
+        Label title = new Label("Result map");
+        title.setStyle("-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #27527a;");
         mapPane.getChildren().add(title);
+
         if (hotels.isEmpty()) {
-            mapPane.getChildren().add(new Text(12, 55, "No hotels to show"));
+            Label empty = new Label("No hotels to show");
+            empty.setStyle("-fx-text-fill: #4d6a82;");
+            mapPane.getChildren().add(empty);
             return;
         }
-        int index = 0;
+
+        TilePane markerPane = new TilePane();
+        markerPane.setHgap(14);
+        markerPane.setVgap(12);
+        markerPane.setPrefColumns(2);
+        markerPane.setPrefTileWidth(160);
+        markerPane.setPrefTileHeight(90);
+        markerPane.setPadding(new Insets(6, 0, 0, 0));
+        markerPane.setTileAlignment(Pos.TOP_LEFT);
+        markerPane.setPrefWidth(mapPane.getPrefWidth() - 16);
+        markerPane.setMaxWidth(mapPane.getPrefWidth() - 16);
+
         for (HotelItem hotel : hotels) {
-            double x = 35 + (index % 4) * 115 + Math.min(40, hotel.rating * 6);
-            double y = 55 + (index / 4) * 55 + Math.min(20, hotel.stars * 3);
-            Circle marker = new Circle(x, y, 9, Color.web("#006ce4"));
+            VBox markerBox = new VBox(6);
+            markerBox.setAlignment(Pos.CENTER);
+            markerBox.setMinWidth(140);
+            markerBox.setMaxWidth(140);
+            markerBox.setStyle("-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 14; -fx-padding: 10; -fx-border-color: rgba(102,126,234,0.18); -fx-border-radius: 14;");
+
+            Circle marker = new Circle(10, Color.web("#006ce4"));
             marker.setStroke(Color.WHITE);
             marker.setStrokeWidth(2);
-            Text label = new Text(x + 12, y + 4, hotel.name.length() > 16 ? hotel.name.substring(0, 16) : hotel.name);
-            marker.setOnMouseClicked(e -> {
+            marker.setCursor(Cursor.HAND);
+
+            Label label = new Label(hotel.name.length() > 20 ? hotel.name.substring(0, 20) + "..." : hotel.name);
+            label.setStyle("-fx-font-size: 12px; -fx-text-fill: #1f3a5d; -fx-font-weight: 600;");
+            label.setWrapText(true);
+            label.setTextAlignment(TextAlignment.CENTER);
+            label.setMaxWidth(130);
+
+            markerBox.getChildren().addAll(marker, label);
+            markerBox.setOnMouseClicked(e -> {
                 hotelListView.getSelectionModel().select(hotel);
                 hotelListView.scrollTo(hotel);
             });
-            label.setOnMouseClicked(e -> {
-                hotelListView.getSelectionModel().select(hotel);
-                hotelListView.scrollTo(hotel);
-            });
-            mapPane.getChildren().addAll(marker, label);
-            index++;
+            markerPane.getChildren().add(markerBox);
         }
+
+        mapPane.getChildren().add(markerPane);
     }
 
     private void loadReviewsForSelectedHotel() {
@@ -1243,24 +1306,24 @@ public class LoginApp extends Application {
     private void stylePrimary(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(PRIMARY_BUTTON);
-            button.setMinWidth(120);
-            button.setPrefHeight(42);
+            button.setMinWidth(140);
+            button.setPrefHeight(44);
         }
     }
 
     private void styleSecondary(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(SECONDARY_BUTTON);
-            button.setMinWidth(120);
-            button.setPrefHeight(42);
+            button.setMinWidth(140);
+            button.setPrefHeight(44);
         }
     }
 
     private void styleDanger(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(DANGER_BUTTON);
-            button.setMinWidth(120);
-            button.setPrefHeight(42);
+            button.setMinWidth(140);
+            button.setPrefHeight(44);
         }
     }
 
