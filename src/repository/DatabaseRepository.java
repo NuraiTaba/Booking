@@ -229,7 +229,7 @@ public class DatabaseRepository {
     }
 
     public void saveBooking(Booking booking) {
-    // Сначала проверим, нет ли уже такой брони
+    
     String checkSql = "SELECT id FROM bookings WHERE user_id = ? AND hotel = ? AND booking_date = ?";
     try (Connection conn = getConnection();
          PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
@@ -241,13 +241,13 @@ public class DatabaseRepository {
         
         if (rs.next()) {
             System.out.println("⚠️ Бронь уже существует, пропускаем");
-            return; // Не создаем дубликат
+            return; 
         }
     } catch (SQLException e) {
         e.printStackTrace();
     }
     
-    // Если брони нет - вставляем
+    
     String sql = "INSERT INTO bookings (user_id, hotel, booking_date) VALUES (?, ?, ?)";
     try (Connection conn = getConnection();
          PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -512,22 +512,22 @@ public class DatabaseRepository {
     public String getStats() {
         StringBuilder sb = new StringBuilder();
         try (Connection conn = getConnection()) {
-            // Total users
+            
             try (Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM users")) {
                 if (rs.next()) sb.append("Total users: ").append(rs.getInt(1)).append("\n");
             }
-            // Total hotels
+            
             try (Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM hotels")) {
                 if (rs.next()) sb.append("Total hotels: ").append(rs.getInt(1)).append("\n");
             }
-            // Total bookings
+            
             try (Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM bookings")) {
                 if (rs.next()) sb.append("Total bookings: ").append(rs.getInt(1)).append("\n");
             }
-            // Total reviews
+            
             try (Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM reviews")) {
                 if (rs.next()) sb.append("Total reviews: ").append(rs.getInt(1)).append("\n");
@@ -538,7 +538,7 @@ public class DatabaseRepository {
         return sb.toString();
     }
         
-    // Запустите один раз, чтобы почистить существующие дубликаты
+    
 public void cleanupDuplicates() {
     String sql = "DELETE b1 FROM bookings b1 " +
                  "INNER JOIN bookings b2 " +
@@ -552,7 +552,7 @@ public void cleanupDuplicates() {
         e.printStackTrace();
     }
 }
-    // ========== ОТЕЛИ ==========
+    
     
     public List<Hotel> getAllHotels() {
         return getHotelsSorted("rating");
@@ -758,21 +758,87 @@ public void cleanupDuplicates() {
                 "Economy Room - 45000 KZT - city view; Standard Room - 55000 KZT - breakfast optional; Family Room - 72000 KZT - two beds",
                 "kazakhstan.hotel@example.com");
 
+        seedHotel("Shymbulak Mountain Resort", "Almaty", "Shymbulak Ski Village 1", 4, 65000,
+                "A scenic mountain resort with ski access, heated pools and breakfast included.",
+                "https://images.unsplash.com/photo-1501117716987-c8e83a8d88f2?w=900",
+                demoOwnerId);
+        updateHotelExtras("Shymbulak Mountain Resort", "Almaty", "Resort", "Alatau", 6.5, 92, 10, true, true, true, true, true);
+        updateHotelContent("Shymbulak Mountain Resort", "Almaty",
+                "https://images.unsplash.com/photo-1501117716987-c8e83a8d88f2?w=900,https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=900",
+                "Check-in: 14:00; Check-out: 12:00; Free cancellation 48 hours before stay; Spa and ski shuttle available.",
+                "Standard Ski Room - 65000 KZT; Deluxe Mountain View - 82000 KZT; Family Suite - 110000 KZT",
+                "shymbulak.resort@example.com");
+
+        seedHotel("Astana Panorama Suites", "Astana", "Akorda Avenue 12", 4, 72000,
+                "Modern suites with panoramic city views, business center and wellness facilities.",
+                "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900",
+                demoOwnerId);
+        updateHotelExtras("Astana Panorama Suites", "Astana", "Suite", "Yesil", 2.1, 90, 9, true, true, true, true, true);
+        updateHotelContent("Astana Panorama Suites", "Astana",
+                "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900,https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=900",
+                "Check-in: 15:00; Check-out: 12:00; Free cancellation on select rates; Parking included.",
+                "City View Suite - 72000 KZT; Executive Suite - 92000 KZT; Presidential Suite - 150000 KZT",
+                "panorama.astana@example.com");
+
+        seedHotel("Samal Garden Hotel", "Almaty", "Samal District 21", 3, 38000,
+                "Cozy hotel in Samal district with garden terrace, free Wi-Fi and friendly staff.",
+                "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900",
+                demoOwnerId);
+        updateHotelExtras("Samal Garden Hotel", "Almaty", "Hotel", "Samal", 3.0, 78, 6, true, false, false, true, true);
+        updateHotelContent("Samal Garden Hotel", "Almaty",
+                "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900,https://images.unsplash.com/photo-1501117716987-c8e83a8d88f2?w=900",
+                "Check-in: 13:00; Check-out: 12:00; Free cancellation before arrival.",
+                "Standard Room - 38000 KZT; Superior Room - 52000 KZT; Family Room - 68000 KZT",
+                "garden.samal@example.com");
+
+        seedHotel("Nomad Palace Hotel", "Astana", "Yesil District 5", 5, 99000,
+                "Luxury hotel near the river with gourmet dining, spa and VIP service.",
+                "https://images.unsplash.com/photo-1560448079-6cc7356c07b6?w=900",
+                demoOwnerId);
+        updateHotelExtras("Nomad Palace Hotel", "Astana", "Hotel", "Yesil", 0.9, 96, 7, true, true, true, true, true);
+        updateHotelContent("Nomad Palace Hotel", "Astana",
+                "https://images.unsplash.com/photo-1560448079-6cc7356c07b6?w=900,https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?w=900",
+                "Check-in: 14:00; Check-out: 12:00; Free cancellation until 24h before arrival; Private transfer available.",
+                "Luxury Room - 99000 KZT; Executive Suite - 140000 KZT; Royal Suite - 220000 KZT",
+                "nomad.palace@example.com");
+
+        seedHotel("Green Park Hotel", "Almaty", "Botanical Garden Street 9", 3, 34000,
+                "Comfortable budget hotel near the botanical gardens and metro station.",
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900",
+                demoOwnerId);
+        updateHotelExtras("Green Park Hotel", "Almaty", "Hotel", "Samal", 1.8, 72, 4, true, true, false, true, true);
+        updateHotelContent("Green Park Hotel", "Almaty",
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900,https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900",
+                "Check-in: 13:00; Check-out: 12:00; Free cancellation for flexible rates; Garden access.",
+                "Standard Room - 34000 KZT; Superior Room - 47000 KZT; Family Room - 61000 KZT",
+                "greenpark.almaty@example.com");
+
+        seedHotel("Central Business Inn", "Astana", "Business Road 22", 4, 68000,
+                "Smart business hotel close to the financial district with fast internet.",
+                "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900",
+                demoOwnerId);
+        updateHotelExtras("Central Business Inn", "Astana", "Inn", "Yesil", 1.4, 82, 5, true, true, false, true, true);
+        updateHotelContent("Central Business Inn", "Astana",
+                "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900,https://images.unsplash.com/photo-1501117716987-c8e83a8d88f2?w=900",
+                "Check-in: 14:00; Check-out: 12:00; Free cancellation until 24h before arrival; Meeting rooms available.",
+                "Business Room - 68000 KZT; Executive Room - 93000 KZT; Junior Suite - 135000 KZT",
+                "business.inn@example.com");
+
         seedReview("Rixos Almaty", "Almaty", demoGuestId, 5, "Excellent location, clean rooms and very helpful staff.");
         seedReview("Rixos Almaty", "Almaty", demoGuestId, 4, "Great breakfast and spa. The room was comfortable.");
         seedReview("Rixos President Astana", "Astana", demoGuestId, 5, "Perfect for a business trip, quiet and professional service.");
     }
 
     private int ensureDemoOwner() {
-        return ensureUser("demo_owner", "demo", 1); // Owner
+        return ensureUser("demo_owner", "demo", 1); 
     }
 
     private int ensureDemoGuest() {
-        return ensureUser("demo_guest", "demo", 0); // Guest
+        return ensureUser("demo_guest", "demo", 0); 
     }
 
     private int ensureDemoAdmin() {
-        return ensureUser("admin", "admin", 2); // Admin
+        return ensureUser("admin", "admin", 2); 
     }
 
     private int ensureUser(String username, String password, int role) {
@@ -910,6 +976,18 @@ public void cleanupDuplicates() {
             stmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Could not seed demo hotel " + name + ": " + e.getMessage());
+        }
+        if (imageUrl != null && !imageUrl.trim().isEmpty()) {
+            String updateSql = "UPDATE hotels SET image_url = ? WHERE name = ? AND city = ? AND (image_url IS NULL OR image_url = '')";
+            try (Connection conn = getConnection();
+                 PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
+                updateStmt.setString(1, imageUrl);
+                updateStmt.setString(2, name);
+                updateStmt.setString(3, city);
+                updateStmt.executeUpdate();
+            } catch (SQLException e) {
+                System.err.println("Could not update image URL for existing hotel " + name + ": " + e.getMessage());
+            }
         }
     }
 
@@ -1087,7 +1165,7 @@ public void cleanupDuplicates() {
     return -1;
 }
     
-    // ========== ОТЗЫВЫ ==========
+    
     
     public boolean addReview(int hotelId, int userId, int bookingId, int rating, String comment) {
         String sql = "INSERT INTO reviews (hotel_id, user_id, booking_id, rating, comment) VALUES (?, ?, ?, ?, ?)";

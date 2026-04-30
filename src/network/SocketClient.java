@@ -28,7 +28,7 @@ public class SocketClient {
         }
     }
 
-    // Для тестирования
+    
     public static void main(String[] args) {
         System.out.println("=== Testing Socket Client ===\n");
 
@@ -50,19 +50,19 @@ public class SocketClient {
 
         System.out.println("=== Testing New Commands ===\n");
 
-// Получить все отели
+
 String hotels = sendCommand("GET_HOTELS");
 System.out.println("GET_HOTELS → \n" + hotels);
 
-// Поиск отелей в Астане
+
 String search = sendCommand("SEARCH Астана");
 System.out.println("SEARCH Астана → \n" + search);
 
-// Детали отеля ID=1
+
 String detail = sendCommand("HOTEL_DETAIL 1");
 System.out.println("HOTEL_DETAIL 1 → " + detail);
 
-// Отели партнёра (ID=13)
+
 String myHotels = sendCommand("MY_HOTELS 13");
 System.out.println("MY_HOTELS 13 → \n" + myHotels);
      }

@@ -22,8 +22,12 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.Cursor;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.TilePane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
@@ -34,6 +38,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import network.SocketClient;
 
@@ -41,15 +46,15 @@ public class LoginApp extends Application {
     private static final String BOOKING_BLUE = "#003580";
     private static final String APP_BG = "-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);";
     private static final String PANEL_STYLE = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-border-color: rgba(255, 255, 255, 0.3); -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);";
-    private static final String PRIMARY_BUTTON = "-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 24; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);";
-    private static final String SECONDARY_BUTTON = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-text-fill: #2f3e55; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 10 20; -fx-border-color: rgba(102, 126, 234, 0.3); -fx-border-radius: 25; -fx-border-width: 1;";
-    private static final String DANGER_BUTTON = "-fx-background-color: linear-gradient(to right, #ff6b6b, #ee5a52); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 10 20;";
+    private static final String PRIMARY_BUTTON = "-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 14 24; -fx-font-size: 15px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.22), 5, 0, 0, 2); -fx-cursor: hand;";
+    private static final String SECONDARY_BUTTON = "-fx-background-color: rgba(255, 255, 255, 0.95); -fx-text-fill: #2f3e55; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 22; -fx-font-size: 14px; -fx-border-color: rgba(102, 126, 234, 0.35); -fx-border-radius: 25; -fx-border-width: 1; -fx-cursor: hand;";
+    private static final String DANGER_BUTTON = "-fx-background-color: linear-gradient(to right, #ff6b6b, #ee5a52); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 22; -fx-font-size: 14px; -fx-cursor: hand;";
     private static final String INPUT_STYLE = "-fx-background-color: rgba(255, 255, 255, 0.9); -fx-border-color: rgba(255, 255, 255, 0.5); -fx-border-radius: 25; -fx-background-radius: 25; -fx-padding: 10 15; -fx-font-size: 14px; -fx-prompt-text-fill: #999;";
     private static final String TEXT_MUTED = "-fx-text-fill: #666666;";
 
     private Stage primaryStage;
     private int currentUserId = -1;
-    private int currentUserRole = 0; // 0 - guest, 1 - owner, 2 - admin
+    private int currentUserRole = 0; 
     private ListView<HotelItem> hotelListView;
     private TextArea hotelDetailsArea;
     private ImageView hotelImageView;
@@ -115,11 +120,11 @@ public class LoginApp extends Application {
         mainContainer.setAlignment(Pos.CENTER);
         mainContainer.setStyle(APP_BG);
 
-        // Иконка или заголовок
+        
         Label titleLabel = new Label("🏨 Booking System");
         titleLabel.setStyle("-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);");
 
-        // Панель логина
+        
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(30));
         grid.setHgap(15);
@@ -155,7 +160,7 @@ public class LoginApp extends Application {
             if (response.startsWith("SUCCESS")) {
                 String[] parts = response.split(" ");
                 currentUserId = Integer.parseInt(parts[1]);
-                currentUserRole = Integer.parseInt(parts[2]); // Сервер должен вернуть роль
+                currentUserRole = Integer.parseInt(parts[2]); 
                 showMainScreen();
             } else {
                 messageLabel.setText("❌ " + response);
@@ -191,14 +196,14 @@ public class LoginApp extends Application {
         tabs.getTabs().add(createBookingsTab());
         tabs.getTabs().add(createWishlistTab());
         tabs.getTabs().add(createProfileTab());
-        if (currentUserRole >= 1) { // Owner or Admin
+        if (currentUserRole >= 1) { 
             tabs.getTabs().add(createOwnerTab());
         }
-        if (currentUserRole == 2) { // Admin only
+        if (currentUserRole == 2) { 
             tabs.getTabs().add(createAdminTab());
         }
 
-        // Стиль для вкладок
+        
         tabs.setStyle("-fx-tab-min-width: 120px; -fx-tab-max-width: 120px; -fx-tab-min-height: 40px;");
 
         Button logoutBtn = new Button("🚪 Logout");
@@ -328,19 +333,29 @@ mapPane.setStyle("-fx-background-color: #eef6ff; -fx-border-color: #b7cbe6; -fx-
         freeCancellationCheckBox = new CheckBox("Free cancellation");
         availableOnlyCheckBox = new CheckBox("Available rooms");
 
-        Button searchBtn = new Button("Search");
-        Button filterBtn = new Button("Apply filters");
-        Button allBtn = new Button("All hotels");
-        Button bookBtn = new Button("Book selected");
-        Button wishlistBtn = new Button("Save to wishlist");
-        Button prevPageBtn = new Button("Prev");
-        Button nextPageBtn = new Button("Next");
-        Button recommendBtn = new Button("For you");
-        Button contactBtn = new Button("Contact hotel");
-        Button reviewsBtn = new Button("Load reviews");
+        Button searchBtn = new Button("🔍 Search");
+        Button filterBtn = new Button("⚡ Apply filters");
+        Button allBtn = new Button("🏨 Show all hotels");
+        Button bookBtn = new Button("✅ Book");
+        Button wishlistBtn = new Button("💾 Wishlist");
+        Button prevPageBtn = new Button("◀ Prev");
+        Button nextPageBtn = new Button("Next ▶");
+        Button recommendBtn = new Button("✨ Recommended");
+        Button contactBtn = new Button("💬 Contact");
+        Button reviewsBtn = new Button("⭐ Reviews");
         stylePrimary(searchBtn);
         styleSecondary(filterBtn, allBtn, wishlistBtn, prevPageBtn, nextPageBtn, recommendBtn, reviewsBtn, contactBtn);
         stylePrimary(bookBtn);
+        searchBtn.setTooltip(new Tooltip("Search hotels by city, district, stars and price."));
+        filterBtn.setTooltip(new Tooltip("Apply current filter settings to the hotel list."));
+        allBtn.setTooltip(new Tooltip("Clear filters and show all hotels."));
+        bookBtn.setTooltip(new Tooltip("Book the selected hotel using the entered guest details."));
+        wishlistBtn.setTooltip(new Tooltip("Save the selected hotel to your wishlist."));
+        prevPageBtn.setTooltip(new Tooltip("Show previous page of hotels."));
+        nextPageBtn.setTooltip(new Tooltip("Show next page of hotels."));
+        recommendBtn.setTooltip(new Tooltip("Display hotel recommendations for you."));
+        contactBtn.setTooltip(new Tooltip("Send a message to the selected hotel."));
+        reviewsBtn.setTooltip(new Tooltip("Load reviews for the selected hotel."));
         contactMessageField = new TextField();
         contactMessageField.setPromptText("Message to hotel");
         styleInput(contactMessageField);
@@ -518,14 +533,15 @@ searchScroll.setStyle("-fx-background-color: transparent; -fx-background: transp
         hotelDetailsArea.setWrapText(true);
         styleArea(hotelDetailsArea);
 
-        VBox discoveryBox = new VBox(8,
+        VBox discoveryBox = new VBox(12,
                 new Label("Suggestions"), suggestionsListView,
                 new Label("Recent searches"), recentSearchesListView,
                 new Label("Popular destinations"), popularDestinationsListView,
                 new Label("For you"), recommendationsArea,
                 new Label("Map"), mapPane);
-        discoveryBox.setPrefWidth(240);
-        discoveryBox.setPadding(new Insets(10));
+        discoveryBox.setPrefWidth(380);
+        discoveryBox.setMaxWidth(380);
+        discoveryBox.setPadding(new Insets(14));
         discoveryBox.setStyle(PANEL_STYLE);
 
         VBox detailsBox = new VBox(10, hotelImageView, hotelDetailsArea);
@@ -833,7 +849,7 @@ VBox root = new VBox(hero, searchScroll, content);   // searchScroll уже со
         Button refreshBtn = new Button("📊 Refresh admin data");
         stylePrimary(refreshBtn);
         refreshBtn.setOnAction(e -> {
-            // Load users, hotels, stats
+            
             String users = send("GET_ALL_USERS");
             usersArea.setText(users);
             String hotels = send("GET_ALL_HOTELS");
@@ -960,9 +976,15 @@ VBox root = new VBox(hero, searchScroll, content);   // searchScroll уже со
         String[] parts = response.split("\\|", -1);
         if (parts.length >= 8) {
             String imageUrl = parts.length >= 9 ? parts[8] : "";
+            String gallery = parts.length >= 20 ? parts[19] : "";
+            if (imageUrl == null || imageUrl.trim().isEmpty() || imageUrl.equalsIgnoreCase("null")) {
+                String[] galleryUrls = gallery.split(",");
+                if (galleryUrls.length > 0 && galleryUrls[0].trim().length() > 0) {
+                    imageUrl = galleryUrls[0].trim();
+                }
+            }
             showHotelImage(imageUrl);
             String reviews = getFilteredReviews(hotel.id);
-            String gallery = parts.length >= 20 ? parts[19] : "";
             String policies = parts.length >= 21 ? parts[20] : "";
             String rooms = parts.length >= 22 ? parts[21] : "";
             String contact = parts.length >= 23 ? parts[22] : "";
@@ -986,26 +1008,20 @@ VBox root = new VBox(hero, searchScroll, content);   // searchScroll уже со
                     extras +
                     "Gallery:\n" + gallery.replace(",", "\n") + "\n\n" +
                     "Policies:\n" + policies + "\n\n" +
-                    "Available rooms:\n" + rooms.replace(";", "\n") + "\n\n" +
-                    "Contact: " + contact + "\n\n" +
-                    "Description:\n" + parts[7] + "\n\n" +
-                    "Reviews:\n" + reviews + "\n\n" +
-                    "Choose dates and press Book selected to create a reservation.");
-        } else {
-            hotelImageView.setImage(null);
-            hotelDetailsArea.setText(response);
+                    "Available rooms:\n" + rooms.replace(";", "\n") + "\n\n");
         }
     }
 
     private void showHotelImage(String imageUrl) {
+        String placeholder = "https://via.placeholder.com/520x260/edf2ff/6c7ef8?text=No+photo+available";
         if (imageUrl == null || imageUrl.trim().isEmpty() || imageUrl.equalsIgnoreCase("null")) {
-            hotelImageView.setImage(null);
+            hotelImageView.setImage(new Image(placeholder, true));
             return;
         }
         try {
             hotelImageView.setImage(new Image(imageUrl, true));
         } catch (IllegalArgumentException ex) {
-            hotelImageView.setImage(null);
+            hotelImageView.setImage(new Image(placeholder, true));
             setStatus("Could not load hotel image");
         }
     }
@@ -1331,24 +1347,24 @@ VBox root = new VBox(hero, searchScroll, content);   // searchScroll уже со
     private void stylePrimary(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(PRIMARY_BUTTON);
-            button.setMinWidth(120);
-            button.setPrefHeight(42);
+            button.setMinWidth(140);
+            button.setPrefHeight(44);
         }
     }
 
     private void styleSecondary(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(SECONDARY_BUTTON);
-            button.setMinWidth(120);
-            button.setPrefHeight(42);
+            button.setMinWidth(140);
+            button.setPrefHeight(44);
         }
     }
 
     private void styleDanger(Button... buttons) {
         for (Button button : buttons) {
             button.setStyle(DANGER_BUTTON);
-            button.setMinWidth(120);
-            button.setPrefHeight(42);
+            button.setMinWidth(140);
+            button.setPrefHeight(44);
         }
     }
 

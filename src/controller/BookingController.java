@@ -59,7 +59,7 @@ public class BookingController {
                 if (parts.length == 3) {
                     String loginResult = authService.login(parts[1], parts[2]);
                     if (loginResult.startsWith("SUCCESS")) {
-                        // Добавить роль
+                        
                         String[] loginParts = loginResult.split(" ");
                         int userId = Integer.parseInt(loginParts[1]);
                         int role = repository.getUserRole(userId);
@@ -405,7 +405,7 @@ public class BookingController {
     
 
     private String handleUpdateHotel(int hotelId, String name, String city, String address, int stars, int price, String description, int ownerId) {
-    // Проверяем, что отель принадлежит этому владельцу
+    
     List<Hotel> ownerHotels = repository.getHotelsByOwner(ownerId);
     boolean ownsHotel = ownerHotels.stream().anyMatch(h -> h.getId() == hotelId);
     if (!ownsHotel) {
@@ -418,7 +418,7 @@ public class BookingController {
     }
     return "ERROR Failed to update hotel";
 }
-    // ========== ОБРАБОТЧИКИ ==========
+    
     
     private String handleFilter(int minPrice, int maxPrice, int stars) {
         List<Hotel> hotels = repository.filterHotels(minPrice, maxPrice, stars);
